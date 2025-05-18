@@ -40,7 +40,6 @@ const navCount = YukinaConfig.navigators.length;
     <a class="brand-lg" href="/">
       <div class="title space-x-2">
         <Icon name="heroicons:home" size={32} />
-        <p>{YukinaConfig.brandTitle}</p>
       </div>
     </a>
     <div class="menu">
@@ -218,17 +217,17 @@ const navCount = YukinaConfig.navigators.length;
 
   // get elements
   const menuSwitcher = document.getElementById(
-    "menu-switcher",
+    "menu-switcher"
   ) as HTMLButtonElement;
   const mobileMenuNav = document.getElementById(
-    "mobile-menu-nav",
+    "mobile-menu-nav"
   ) as HTMLUListElement;
   const mobileMenuNavItems = document.getElementsByClassName("mobile-nav-item");
   let menuIconClosed = document.getElementById(
-    "menu-icon-closed",
+    "menu-icon-closed"
   ) as any as SVGElement;
   let menuIconOpened = document.getElementById(
-    "menu-icon-opened",
+    "menu-icon-opened"
   ) as any as SVGElement;
 
   // menu state
@@ -243,12 +242,12 @@ const navCount = YukinaConfig.navigators.length;
     if (isMenuOpen) {
       mobileMenuNav.classList.replace(
         "mobile-menu-nav-opened",
-        "mobile-menu-nav-closed",
+        "mobile-menu-nav-closed"
       );
     } else {
       mobileMenuNav.classList.replace(
         "mobile-menu-nav-closed",
-        "mobile-menu-nav-opened",
+        "mobile-menu-nav-opened"
       );
     }
     isMenuOpen = !isMenuOpen;
@@ -273,13 +272,13 @@ const navCount = YukinaConfig.navigators.length;
   // Theme switcher
   // Get elements
   const themeSwitcher = document.getElementById(
-    "theme-switcher",
+    "theme-switcher"
   ) as HTMLButtonElement;
   let themeIconLight = document.getElementById(
-    "theme-icon-light",
+    "theme-icon-light"
   ) as any as SVGElement;
   let themeIconDark = document.getElementById(
-    "theme-icon-dark",
+    "theme-icon-dark"
   ) as any as SVGElement;
 
   // Record the current theme
