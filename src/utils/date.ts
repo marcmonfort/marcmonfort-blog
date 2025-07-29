@@ -15,5 +15,10 @@ export function formatDate(
     day: "2-digit",
   },
 ) {
-  return date.toLocaleDateString(locales, options).replaceAll("/", " - ");
+  // NOTE: I think its better to always return YYYY - MM - DD
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+  // return date.toLocaleDateString(locales, options).replaceAll("/", " - ");
 }
