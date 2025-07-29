@@ -77,7 +77,8 @@ const { time, wordCount } = props.readingMetadata;
           />
         </a>
       </div>
-      <div class="ml-2 hidden lg:block">
+      <!-- NOTE: I think this occupies too much space and becomes a bit too cumbersome -->
+      <!-- <div class="ml-2 hidden lg:block">
         <ul class="flex flex-row space-x-4">
           <li class="data space-x-2">
             <PostCardInfoIcon name="cuida:calendar-outline" />
@@ -123,22 +124,44 @@ const { time, wordCount } = props.readingMetadata;
             }
           </li>
         </ul>
-      </div>
+      </div> -->
       <div class="lg:ml-2">
         <p class="desc">{props.description}</p>
       </div>
       <div>
         <div class="select-none lg:ml-2">
-          <div class="reading-time">
+          <div class="reading-time flex flex-row items-center space-x-3">
+            <span class="select-none whitespace-nowrap">
+              {formatDate(props.published, YukinaConfig.locale)}
+            </span>
+            <span>|</span>
+            {
+              props.category && (
+                <span class="data space-x-1.5">
+                  <a
+                    class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
+                    href={`/categories/${IdToSlug(props.category)}`}
+                  >
+                    {props.category}
+                  </a>
+                </span>
+              )
+            }
+            <!-- 
+             I think I don't like the word counts here.
             <span>
               {wordCount}
               {i18n(I18nKeys.post_card_words)}
-            </span>
-            <span>|</span>
-            <span>
-              {time}
-              {i18n(I18nKeys.post_card_minutes)}
-            </span>
+              </span>
+            <span>|</span> 
+            -->
+            <div class="hidden sm:inline">
+              <span>|</span>
+              <span>
+                {time}
+                {i18n(I18nKeys.post_card_minutes)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +196,7 @@ const { time, wordCount } = props.readingMetadata;
   }
 
   .desc {
-    @apply line-clamp-1 text-[var(--text-color)];
+    @apply line-clamp-2 text-[var(--text-color)] sm:line-clamp-3 lg:line-clamp-4;
     font-family: var(--primary-font);
   }
 
