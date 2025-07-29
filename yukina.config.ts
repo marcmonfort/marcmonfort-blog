@@ -33,7 +33,7 @@ const YukinaConfig: Configuration = {
 
   username: "Marc Monfort",
   sign: "Research Engineer",
-  avatarUrl: "/public/profile-photo-4.jpg",
+  avatarUrl: "/profile-photo-4.jpg",
   socialLinks: [
     {
       icon: "line-md:github-loop",
