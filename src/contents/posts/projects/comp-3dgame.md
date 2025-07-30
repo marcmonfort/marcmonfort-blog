@@ -1,20 +1,30 @@
 ---
-title: Comp – Gameplay Demo
+title: Comp – Custom Game Engine
 published: 2025-07-30
-description: Gameplay demo of Comp, a custom-built game engine project showcasing physics and rendering capabilities.
-tags: [Game Engine, Demo, Portfolio]
+description: Technical demonstration of Comp, a custom game engine project showcasing real-time rendering and basic physics built from scratch.
+tags: [Game Engine, Demo]
 category: Projects
-licenseName: "Unlicensed"
+# licenseName: "Unlicensed"
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/Comp3D"
 cover: "/posts/comp-demo-cover-v3.png"
 draft: false
 ---
 
-# Comp – Gameplay Demo
 
-This is a short demo showcasing **Comp**, a game engine I developed from scratch. It includes real-time rendering, basic physics simulation, and custom controls.
 
-<iframe width="100%" height="468" src="https://www.youtube.com/embed/gijlmRadfKw" title="Comp Gameplay Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+# Comp – Custom Game Engine
 
-For more details, check out the source code on [GitHub](https://github.com/marcmonfort/Comp3D).
+This demonstration presents **Comp**, a custom game engine built from scratch as part of a computer graphics project. The engine implements:
+
+- **Real-time rendering pipeline** (OpenGL-based)
+- **Basic rigid-body physics simulation**
+- **Camera and user input management**
+- **Scene graph and resource management**
+
+<iframe width="100%" height="468" src="https://www.youtube.com/embed/gijlmRadfKw" title="Comp Technical Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The project demonstrates a bottom-up approach to game engine design, focusing on **low-level graphics programming** and **performance-oriented architecture**.
+
+For full source code and documentation, visit the [GitHub repository](https://github.com/marcmonfort/Comp3D).
+
