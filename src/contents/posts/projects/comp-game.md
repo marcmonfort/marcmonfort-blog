@@ -1,7 +1,8 @@
 ---
 title: Comp – Custom Game Engine
-published: 2020-12-24
+# subtitle: 
 description: Technical demonstration of Comp, a custom game engine project showcasing real-time rendering and basic physics built from scratch.
+published: 2020-12-24
 tags: [Game Engine, Demo]
 category: Projects
 # licenseName: "Unlicensed"

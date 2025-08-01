@@ -1,7 +1,8 @@
 ---
 title:  Federated Learning for TinyML Devices
-published: 2025-07-30
+subtitle: Hardware implementation on microcontrollers and adaptive training techniques.
 description: TinyML Federated Learning project, covering its hardware implementation on microcontrollers, adaptive training techniques, and insights from peer-reviewed publications and open-source code releases.
+published: 2025-07-30
 tags: [Research, TinyML, Federated Learning, IoT, Publications]
 category: Research
 licenseName: "CC BY 4.0"

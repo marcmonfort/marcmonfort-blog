@@ -20,7 +20,7 @@ const { Content } = await render(entry);
   !entry.data.licenseName && (
     <PostLayout
       title={entry.data.title}
-      subTitle={entry.data.description}
+      subTitle={entry.data.subtitle || entry.data.description}
       bannerImage={entry.data.cover}
       published={entry.data.published}
     >
@@ -42,7 +42,7 @@ const { Content } = await render(entry);
   entry.data.licenseName && (
     <PostLayout
       title={entry.data.title}
-      subTitle={entry.data.description}
+      subTitle={entry.data.subtitle || entry.data.description}
       bannerImage={entry.data.cover}
       published={entry.data.published}
       license={{ name: entry.data.licenseName, url: entry.data.licenseUrl }}
