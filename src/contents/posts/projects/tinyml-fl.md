@@ -7,7 +7,7 @@ category: Research
 licenseName: "CC BY 4.0"
 author: Marc Monfort
 draft: false
-cover: "/posts/tinyml-fl-cover.png"
+cover: "/posts/tinyml-fl-cover.webp"
 ---
 
 # Federated Learning for TinyML Devices

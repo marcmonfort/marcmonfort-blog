@@ -7,7 +7,7 @@ category: Projects
 # licenseName: "Unlicensed"
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/Comp3D"
-cover: "/posts/comp-demo-cover-v3.png"
+cover: "/posts/comp-demo-cover.webp"
 draft: false
 ---
 

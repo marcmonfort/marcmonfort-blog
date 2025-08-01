@@ -34,7 +34,7 @@ const YukinaConfig: Configuration = {
 
   username: "Marc Monfort",
   sign: "Research Engineer",
-  avatarUrl: "/profile-photo-4.jpg",
+  avatarUrl: "/about/profile-photo.webp",
   socialLinks: [
     {
       icon: "line-md:github-loop",
@@ -55,21 +55,13 @@ const YukinaConfig: Configuration = {
   maxFooterTagChip: 24,
 
   banners: [
-    "/banners/marenostrum.jpg",
-    // "/banners/fpv-drone.jpg",
-    "/banners/jet-fighter.jpg",
-    "/banners/MQ-9_Reaper_UAV.jpg",
-    "/banners/coding.jpg",
-    "/banners/neurons.webp",
-    "/banners/china-wall.jpg",
-    // "https://s2.loli.net/2025/01/25/PBvHFjr5yDu6t4a.webp",
-    // "https://s2.loli.net/2025/01/25/6bKcwHZigzlM4mJ.webp",
-    // "https://s2.loli.net/2025/01/25/H9WgEK6qNTcpFiS.webp",
-    // "https://s2.loli.net/2025/01/25/njNVtuUMzxs81RI.webp",
-    // "https://s2.loli.net/2025/01/25/tozsJ8QHAjFN3Mm.webp",
-    // "https://s2.loli.net/2025/01/25/Pm89OveZq7NWUxF.webp",
-    // "https://s2.loli.net/2025/01/25/UCYKvc1ZhgPHB9m.webp",
-    // "https://s2.loli.net/2025/01/25/JjpLOW8VSmufzlA.webp",
+    "/banners/MareNostrum4.webp",
+    "/banners/fpv-drone.webp",
+    // "/banners/jet-fighter.webp",
+    // "/banners/MQ-9_Reaper_UAV.webp",
+    "/banners/coding.webp",
+    // "/banners/neurons.webp",
+    "/banners/china-wall.webp",
   ],
 
   slugMode: "HASH", // 'RAW' | 'HASH'
