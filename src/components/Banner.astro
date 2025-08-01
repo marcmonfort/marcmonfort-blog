@@ -167,7 +167,7 @@ const carouselAnimationTime = `${carouselImgsList.length * 6}s`;
   }
 
   .cover {
-    @apply absolute left-0 top-0 z-0 block h-[var(--banner-height)] w-full overflow-hidden bg-white;
+    @apply absolute left-0 top-0 z-0 block h-[calc(var(--banner-height)*3/4)] w-full overflow-hidden bg-white lg:h-[var(--banner-height)];
   }
 
   .cover::before {
