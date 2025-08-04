@@ -1,0 +1,94 @@
+---
+title: dataClay – Distributed Data Store
+subtitle: Distributed data management middleware designed to enable remote object-oriented storage and computation.
+description: dataClay is a distributed data management middleware designed to enable object-oriented storage and computation across multiple nodes for high-performance and cloud environments.
+published: 2025-08-04
+tags: [Distributed Systems, Middleware, HPC, Data Management]
+category: Projects
+licenseName: "Apache License 2.0"
+author: Barcelona Supercomputing Center (BSC)
+sourceLink: "https://github.com/bsc-dom/dataclay"
+cover: "/posts/dataclay-cover.webp"
+draft: false
+---
+
+# dataClay
+
+[dataClay](https://github.com/bsc-dom/dataclay) is a middleware for distributed data management that simplifies the storage and execution of objects across multiple nodes. It provides **object-based storage** with integrated **compute capabilities**, enabling transparent data access and reducing data movement in distributed and cloud environments.
+
+Official documentation: [dataclay.readthedocs.io](https://dataclay.readthedocs.io/en/latest/)
+
+---
+
+## Key Features
+
+- **Object-Oriented Storage**: Store and manage data as objects instead of files or tables.
+- **Transparent Access**: Clients access objects without worrying about location or serialization.
+- **Co-Located Compute**: Perform computations directly where the data resides to reduce overhead.
+- **Multi-Backend Support**: Integrates with various storage backends and execution environments.
+- **Scalability**: Designed for HPC, cloud, and edge computing scenarios.
+
+---
+
+## Typical Use Cases
+
+- High-performance computing (HPC) workflows requiring distributed data sharing.
+- Cloud and edge environments where minimizing data transfer is critical.
+- Complex simulations and AI/ML workloads with high data locality needs.
+
+---
+
+## Getting Started
+
+To install dataClay and start using it in your project:
+
+```bash
+git clone --recurse-submodules https://github.com/bsc-dom/dataclay.git
+cd dataclay
+pip install .
+````
+
+Check out the [Quickstart Guide](https://dataclay.readthedocs.io/en/latest/quickstart.html) for setup and basic usage.
+
+---
+
+## Example
+
+```python
+from dataclay import Client
+
+# Initialize the client
+client = Client()
+
+# Define a custom dataClay object
+class MyClass(DataClayObject):
+    def __init__(self, data):
+        self.data = data
+
+    @activemethod
+    def process(self):
+        # Process the data
+        # This method can be executed on the dataClay server
+        print(f"Processing data: {self.data}")
+
+# Create and register an object
+obj = MyClass(data="example")
+obj.make_persistent()
+
+# Access the object transparently
+# The `data` is stored and accessed remotely
+print(obj.data)
+obj.process()
+```
+
+---
+
+## Resources
+
+* **Documentation**: [https://dataclay.readthedocs.io](https://dataclay.readthedocs.io/en/latest/)
+* **Source Code**: [https://github.com/bsc-dom/dataclay](https://github.com/bsc-dom/dataclay)
+* **License**: Apache 2.0
+
+---
+
+> dataClay is actively maintained by the [Barcelona Supercomputing Center](https://www.bsc.es/) and used in various research and industrial projects for distributed data-intensive computing.
