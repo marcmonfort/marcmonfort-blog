@@ -19,8 +19,8 @@ Below you’ll find the highlights, starting with a deep dive into our MDPI Elec
 
 > **Papers:**  
 > *Electronics* 11(4): 573, 2022 [[Open Access]](https://doi.org/10.3390/electronics11040573)  
-> *ACM SenSys ’21 Poster* [[DOI]](https://dl.acm.org/doi/abs/10.1145/3462203.3475896)
-
+> *ACM SenSys ’21 Poster* [[DOI]](https://dl.acm.org/doi/abs/10.1145/3462203.3475896)  
+> *UPC, Full Thesis* [[Open Access]](https://upcommons.upc.edu/entities/publication/a2172dd2-5b6b-4e24-a714-4930d6122bcc)
 
 ### Motivation  
 Typical TinyML workflows train models offline on powerful GPUs, then deploy quantized versions for inference only. We asked: **what if training itself could run on-device—collaboratively and privately—via Federated Learning (FL)?**
