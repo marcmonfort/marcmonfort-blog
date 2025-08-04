@@ -6,7 +6,7 @@ const YukinaConfig: Configuration = {
   subTitle: "Research Engineer",
   brandTitle: "Marc Monfort",
 
-  description: "Demo Site",
+  description: "Portfolio Site",
 
   site: "https://marcmonfort.com",
 
@@ -41,12 +41,12 @@ const YukinaConfig: Configuration = {
       link: "https://github.com/marcmonfort",
     },
     {
-      icon: "mingcute:bilibili-line",
-      link: "https://space.bilibili.com/22433608",
+      icon: "line-md:linkedin",
+      link: "https://www.linkedin.com/in/marc-monfort",
     },
     {
-      icon: "mingcute:netease-music-line",
-      link: "https://music.163.com/#/user/home?id=125291648",
+      icon: "line-md:youtube",
+      link: "https://www.youtube.com/@marcmonfort",
     },
   ],
   maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
