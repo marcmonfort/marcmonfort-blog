@@ -6,6 +6,7 @@ published: 2025-08-06
 tags: [Portfolio, Astro, Self-Hosting, Proxmox, Cloudflare, Nginx]
 category: Projects
 cover: /posts/web_portfolio/cover.webp
+coverPosition: top
 draft: false
 ---
 

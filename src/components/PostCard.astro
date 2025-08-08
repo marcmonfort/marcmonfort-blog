@@ -16,6 +16,7 @@ export interface Props {
   tags?: string[];
   description?: string;
   image?: string;
+  coverPosition?: "top" | "center" | "bottom";
   readingMetadata: { time: number; wordCount: number };
 }
 
@@ -33,7 +34,13 @@ const { time, wordCount } = props.readingMetadata;
     class="relative h-[128px] transition-all hover:brightness-75 lg:hidden"
   >
     <img
-      class="lozad absolute left-0 top-0 h-full w-full rounded-t-3xl object-cover lg:hidden"
+      class={`lozad absolute left-0 top-0 h-full w-full rounded-t-3xl object-cover lg:hidden ${
+        props.coverPosition === "top"
+          ? "object-top"
+          : props.coverPosition === "bottom"
+            ? "object-bottom"
+            : "object-center"
+      }`}
       data-src={props.image ?? GetCoverURLForUnspecifiedEntry(entryID)}
       alt="CoverPost"
     />
@@ -170,7 +177,13 @@ const { time, wordCount } = props.readingMetadata;
       <a href={contentUrl} class="cover-wrapper">
         <Icon class="right-icon" name="cuida:caret-right-outline" size={96} />
         <img
-          class="lozad h-[212px] w-[404px] select-none rounded-r-3xl object-cover dark:brightness-90"
+          class={`lozad h-[212px] w-[404px] select-none rounded-r-3xl object-cover dark:brightness-90 ${
+            props.coverPosition === "top"
+              ? "object-top"
+              : props.coverPosition === "bottom"
+                ? "object-bottom"
+                : "object-center"
+          }`}
           data-src={props.image ?? GetCoverURLForUnspecifiedEntry(entryID)}
           alt="PostCover"
         />

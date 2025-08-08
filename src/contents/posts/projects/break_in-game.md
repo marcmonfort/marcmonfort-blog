@@ -8,6 +8,7 @@ category: Projects
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/break-in"
 cover: "/posts/break_in-demo-cover.webp"
+coverPosition: bottom
 draft: false
 ---
 
