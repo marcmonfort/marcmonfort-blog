@@ -92,3 +92,15 @@ pnpm preview
 - [Hexo Shoka Theme](https://github.com/amehime/hexo-theme-shoka) for providing design ideas
 
 - [Astro Fuwari Template](https://github.com/saicaca/fuwari) for providing the main design ideas and some code implementations
+
+
+
+
+<!-- For the cover size use 1:9 aspect ratio
+📐 Cover Image Guidelines
+
+    Minimum size: 808×424 px (for Retina screens) (half if necessary)
+
+    Recommended size: 1200×630 px (for sharp display + social sharing)
+
+    Aspect ratio: 1.9:1 (match layout, avoid cropping) -->
