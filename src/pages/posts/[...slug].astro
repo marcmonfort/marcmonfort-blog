@@ -22,6 +22,7 @@ const { Content } = await render(entry);
       title={entry.data.title}
       subTitle={entry.data.subtitle || entry.data.description}
       bannerImage={entry.data.cover}
+      coverPosition={entry.data.coverPosition}
       published={entry.data.published}
     >
       <div
@@ -44,6 +45,7 @@ const { Content } = await render(entry);
       title={entry.data.title}
       subTitle={entry.data.subtitle || entry.data.description}
       bannerImage={entry.data.cover}
+      coverPosition={entry.data.coverPosition}
       published={entry.data.published}
       license={{ name: entry.data.licenseName, url: entry.data.licenseUrl }}
       author={entry.data.author}

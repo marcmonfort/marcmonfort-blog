@@ -1,5 +1,5 @@
 ---
-title: Self-Hosted Portfolio Website with Astro
+title: Self-Hosted Astro Website
 subtitle: A step-by-step log of how I designed, built and self-hosted my personal portfolio—covering everything.
 description: A step-by-step log of how I designed, built and self-hosted my personal portfolio—covering everything from choosing Astro and the Yukina template to domain, dynamic DNS, Proxmox virtualisation, Nginx Proxy Manager and automated HTTPS.
 published: 2025-08-06

@@ -7,6 +7,7 @@ interface Props {
   title?: string;
   subTitle?: string;
   bannerImage?: string;
+  coverPosition?: "top" | "center" | "bottom";
   published?: Date;
   license?: {
     name: string;
@@ -16,11 +17,24 @@ interface Props {
   sourceLink?: string;
 }
 
-const { title, subTitle, bannerImage, published, license, author, sourceLink } =
-  Astro.props;
+const {
+  title,
+  subTitle,
+  bannerImage,
+  coverPosition,
+  published,
+  license,
+  author,
+  sourceLink,
+} = Astro.props;
 ---
 
-<Main title={title} subTitle={subTitle} bannerImage={bannerImage}>
+<Main
+  title={title}
+  subTitle={subTitle}
+  bannerImage={bannerImage}
+  coverPosition={coverPosition}
+>
   <!-- <Fragment set:html={tocHTMLString} /> -->
   <div class="article-wrapper">
     <div class="article">
