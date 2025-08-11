@@ -11,14 +11,9 @@ export function formatDate(
   locales: string = "en",
   options: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "2-digit",
+    month: "short", // Use short month format (e.g., Jan, Feb)
     day: "2-digit",
   },
 ) {
-  // NOTE: I think its better to always return YYYY - MM - DD
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-  // return date.toLocaleDateString(locales, options).replaceAll("/", " - ");
+  return date.toLocaleDateString(locales, options);
 }
