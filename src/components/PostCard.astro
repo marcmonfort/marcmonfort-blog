@@ -138,9 +138,9 @@ const { time, wordCount } = props.readingMetadata;
       <div>
         <div class="select-none lg:ml-2">
           <div
-            class="reading-time flex flex-row flex-wrap items-center gap-y-1 space-x-3"
+            class="reading-time flex flex-row flex-wrap items-center gap-y-1"
           >
-            <div class="hidden lg:inline">
+            <div class="mr-3.5 hidden lg:inline">
               <span class="select-none whitespace-nowrap">
                 {formatDate(props.published, YukinaConfig.locale)}
               </span>
@@ -150,7 +150,7 @@ const { time, wordCount } = props.readingMetadata;
               props.category && (
                 <span class="data space-x-1.5">
                   <a
-                    class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
+                    class="select-none rounded-md py-0.5 pr-1.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
                     href={`/categories/${IdToSlug(props.category)}`}
                   >
                     {props.category}
@@ -161,7 +161,7 @@ const { time, wordCount } = props.readingMetadata;
             {
               props.tags && props.tags.length > 0 && (
                 <>
-                  <span>|</span>
+                  <span class="mx-2">|</span>
                   <div class="inline-flex flex-row flex-wrap items-center space-x-1">
                     {props.tags.slice(0, 3).map((tag, index) => (
                       <span class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
@@ -222,7 +222,7 @@ const { time, wordCount } = props.readingMetadata;
   }
 
   .reading-time {
-    @apply space-x-3 align-middle text-sm text-[var(--text-color-lighten)];
+    @apply align-middle text-sm text-[var(--text-color-lighten)];
     font-family: var(--primary-font);
   }
 
