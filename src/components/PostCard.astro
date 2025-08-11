@@ -67,7 +67,7 @@ const { time, wordCount } = props.readingMetadata;
       </div>
     </div>
   </a>
-  <div class="flex h-[128px] flex-row lg:h-[212px]">
+  <div class="flex min-h-[128px] flex-row lg:h-[212px]">
     <div
       class="flex w-full flex-col justify-between pb-5 pl-5 pr-6 pt-3 lg:w-[calc(var(--page-width-lg)-404px)] lg:py-7 lg:pr-0 xl:w-[calc(var(--page-width-xl)-676px)]"
     >
@@ -132,19 +132,20 @@ const { time, wordCount } = props.readingMetadata;
           </li>
         </ul>
       </div> -->
-      <div class="lg:ml-2">
+      <div class="my-3 lg:ml-2">
         <p class="desc">{props.description}</p>
       </div>
       <div>
         <div class="select-none lg:ml-2">
-          <div class="reading-time flex flex-row items-center space-x-3">
+          <div
+            class="reading-time flex flex-row flex-wrap items-center gap-y-1 space-x-3"
+          >
             <div class="hidden lg:inline">
               <span class="select-none whitespace-nowrap">
                 {formatDate(props.published, YukinaConfig.locale)}
               </span>
               <span class="ml-2">|</span>
             </div>
-
             {
               props.category && (
                 <span class="data space-x-1.5">
@@ -159,8 +160,9 @@ const { time, wordCount } = props.readingMetadata;
             }
             {
               props.tags && props.tags.length > 0 && (
+                <>
                   <span>|</span>
-                  <div class="inline-flex flex-row items-center space-x-1">
+                  <div class="inline-flex flex-row flex-wrap items-center space-x-1">
                     {props.tags.slice(0, 3).map((tag, index) => (
                       <span class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
                         <a
@@ -172,7 +174,7 @@ const { time, wordCount } = props.readingMetadata;
                       </span>
                     ))}
                   </div>
-                </div>
+                </>
               )
             }
           </div>
@@ -215,7 +217,7 @@ const { time, wordCount } = props.readingMetadata;
   }
 
   .desc {
-    @apply line-clamp-2 text-[var(--text-color)] sm:line-clamp-3 lg:line-clamp-4;
+    @apply text-[var(--text-color)] lg:line-clamp-4;
     font-family: var(--primary-font);
   }
 
