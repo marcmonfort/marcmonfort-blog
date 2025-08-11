@@ -140,7 +140,7 @@ const { time, wordCount } = props.readingMetadata;
           <div
             class="reading-time flex flex-row flex-wrap items-center gap-y-1"
           >
-            <div class="mr-3.5 hidden lg:inline">
+            <div class="mr-2 hidden lg:inline">
               <span class="select-none whitespace-nowrap">
                 {formatDate(props.published, YukinaConfig.locale)}
               </span>
@@ -150,7 +150,7 @@ const { time, wordCount } = props.readingMetadata;
               props.category && (
                 <span class="data space-x-1.5">
                   <a
-                    class="select-none rounded-md py-0.5 pr-1.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
+                    class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
                     href={`/categories/${IdToSlug(props.category)}`}
                   >
                     {props.category}
