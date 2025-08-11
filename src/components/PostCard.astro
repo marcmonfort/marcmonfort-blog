@@ -138,10 +138,13 @@ const { time, wordCount } = props.readingMetadata;
       <div>
         <div class="select-none lg:ml-2">
           <div class="reading-time flex flex-row items-center space-x-3">
-            <span class="select-none whitespace-nowrap">
-              {formatDate(props.published, YukinaConfig.locale)}
-            </span>
-            <span>|</span>
+            <div class="hidden lg:inline">
+              <span class="select-none whitespace-nowrap">
+                {formatDate(props.published, YukinaConfig.locale)}
+              </span>
+              <span class="ml-2">|</span>
+            </div>
+
             {
               props.category && (
                 <span class="data space-x-1.5">
@@ -154,21 +157,24 @@ const { time, wordCount } = props.readingMetadata;
                 </span>
               )
             }
-            <!-- 
-             I think I don't like the word counts here.
-            <span>
-              {wordCount}
-              {i18n(I18nKeys.post_card_words)}
-              </span>
-            <span>|</span> 
-            -->
-            <div class="hidden sm:inline">
-              <span>|</span>
-              <span>
-                {time}
-                {i18n(I18nKeys.post_card_minutes)}
-              </span>
-            </div>
+            {
+              props.tags && props.tags.length > 0 && (
+                  <span>|</span>
+                  <div class="inline-flex flex-row items-center space-x-1">
+                    {props.tags.slice(0, 3).map((tag, index) => (
+                      <span class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
+                        <a
+                          class="rounded-md px-1.5 py-0.5 transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
+                          href={`/tags/${IdToSlug(tag)}`}
+                        >
+                          {tag}
+                        </a>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
