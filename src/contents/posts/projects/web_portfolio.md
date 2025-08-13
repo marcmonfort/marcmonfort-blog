@@ -17,6 +17,8 @@ The result is a modern, Astro-powered site that’s self-hosted on my own Proxmo
 
 In this post I’ll walk through the full journey: why I chose Astro, the template I started from, the tweaks I made, how I automated deployment, the home-lab hosting topology, and a few lessons learned along the way.
 
+<iframe width="100%" height="468" src="https://www.youtube.com/embed/UI2TUB_mIKA" title="How I Self-Hosted my Astro Website" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ---
 
 ## Why Astro for a Personal Site 🚀
