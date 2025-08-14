@@ -26,7 +26,7 @@ export default defineConfig({
     swup({
       theme: false,
       containers: [".content", "footer", ".banner-inner"],
-      smoothScrolling: true,
+      smoothScrolling: false,
       progress: true,
       cache: true,
       preload: true,
