@@ -22,17 +22,19 @@ const props = Astro.props;
 <Base>
   <NavBar />
 
-  {
-    YukinaConfig.bannerStyle == "LOOP" && !props.hideBanner && (
-      <Banner
-        title={props.title}
-        subTitle={props.subTitle}
-        bannerImage={props.bannerImage}
-        coverPosition={props.coverPosition}
-        slug={props.slug}
-      />
-    )
-  }
+  <div id="banner-container">
+    {
+      YukinaConfig.bannerStyle == "LOOP" && !props.hideBanner && (
+        <Banner
+          title={props.title}
+          subTitle={props.subTitle}
+          bannerImage={props.bannerImage}
+          coverPosition={props.coverPosition}
+          slug={props.slug}
+        />
+      )
+    }
+  </div>
 
   <div class={`main-container my-10 ${props.hideBanner ? "mt-20" : ""}`}>
     <div class="flex flex-row items-start xl:space-x-4">

@@ -25,7 +25,7 @@ export default defineConfig({
     icon(),
     swup({
       theme: false,
-      containers: ["main", "footer"],
+      containers: ["#banner-container", "main", "footer"],
       smoothScrolling: true,
       progress: true,
       cache: true,
