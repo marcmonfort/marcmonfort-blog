@@ -166,7 +166,7 @@
       {#each searchResult as item}
         <a
           href={item.url}
-          class="mx-2 py-2 px-3 rounded-xl result-item transition-all"
+          class="mx-2 py-2 px-3 rounded-xl result-item transition-all bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10"
           on:click={handleResultClick}
         >
           <div class="flex flex-row space-x-1 items-center">
