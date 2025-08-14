@@ -13,6 +13,7 @@ export interface Props {
   bannerImage?: string;
   coverPosition?: "top" | "center" | "bottom";
   slug?: string;
+  hideBanner?: boolean;
 }
 
 const props = Astro.props;
@@ -22,7 +23,7 @@ const props = Astro.props;
   <NavBar />
 
   {
-    YukinaConfig.bannerStyle == "LOOP" && (
+    YukinaConfig.bannerStyle == "LOOP" && !props.hideBanner && (
       <Banner
         title={props.title}
         subTitle={props.subTitle}
@@ -33,7 +34,7 @@ const props = Astro.props;
     )
   }
 
-  <div class="main-container my-10">
+  <div class={`main-container my-10 ${props.hideBanner ? "mt-20" : ""}`}>
     <div class="flex flex-row items-start xl:space-x-4">
       <div class="side-bar">
         <SideBar />
