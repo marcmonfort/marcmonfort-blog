@@ -61,15 +61,7 @@
       !searchBar.contains(event.target as any) &&
       !searchButton.contains(event.target as any)
     ) {
-      searchBar.style.height = "0px";
-      searchBar.style.opacity = "0";
-      searchBarDisplay = false;
-      searchKeyword = "";
-      search("");
-      // Blur the input to hide keyboard
-      if (searchInput) {
-        searchInput.blur();
-      }
+      closeSearchBar();
     }
   });
 
@@ -94,6 +86,25 @@
         searchInput.blur();
       }
     }
+  };
+
+  const closeSearchBar = () => {
+    searchBar.style.height = "0px";
+    searchBar.style.opacity = "0";
+    searchBarDisplay = false;
+    searchKeyword = "";
+    search("");
+    // Blur the input to hide keyboard
+    if (searchInput) {
+      searchInput.blur();
+    }
+  };
+
+  const handleResultClick = () => {
+    // Close search bar with a slight delay to allow navigation to start
+    setTimeout(() => {
+      closeSearchBar();
+    }, 50);
   };
 
   $: search(searchKeyword);
@@ -156,6 +167,7 @@
         <a
           href={item.url}
           class="mx-2 py-2 px-3 rounded-xl result-item transition-all"
+          on:click={handleResultClick}
         >
           <div class="flex flex-row space-x-1 items-center">
             <p
