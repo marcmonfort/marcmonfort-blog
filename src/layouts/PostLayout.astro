@@ -57,6 +57,22 @@ const {
   </div>
 </Main>
 
+<script>
+  // Ensure post pages scroll to top on load
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  // Handle initial page load
+  document.addEventListener("DOMContentLoaded", scrollToTop);
+
+  // Handle Swup page transitions
+  document.addEventListener("swup:contentReplaced", scrollToTop);
+
+  // Also handle window load as a fallback
+  window.addEventListener("load", scrollToTop);
+</script>
+
 <style>
   .article-wrapper {
     @apply mx-3 rounded-2xl bg-[var(--card-color)] px-5 py-6 lg:mx-0 lg:px-10 lg:py-9;
