@@ -92,10 +92,10 @@ I wanted something simple and recognizable using my initials “MM.” Two pract
 - A circular-crop variant that reads well on light backgrounds.
 - A transparent version with a subtle white border to hold up on dark backgrounds.
 
-<div style="display: flex; justify-content: center; gap: 10px; padding: 10px;">
-  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo on light background" width="200" />
-  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo preview on dark background" width="200" style="background-color: black;" />
-  <img src="/posts/web_portfolio/MM_logo_fit_transparent.png" alt="MM logo with white border on dark" width="200" style="background-color: black;" />
+<div style="display: flex; justify-content: center; gap: 10px; padding: 10px; flex-wrap: wrap;">
+  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo on light background" style="width: 100%; max-width: 200px; height: auto;" />
+  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo preview on dark background" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
+  <img src="/posts/web_portfolio/MM_logo_fit_transparent.png" alt="MM logo with white border on dark" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
 </div>
 
 ---
