@@ -13,6 +13,7 @@
   let resultPannel: HTMLDivElement;
   let searchBar: HTMLDivElement;
   let searchButton: HTMLButtonElement;
+  let searchInput: HTMLInputElement;
 
   let search = (keyword: string) => {};
 
@@ -65,6 +66,10 @@
       searchBarDisplay = false;
       searchKeyword = "";
       search("");
+      // Blur the input to hide keyboard
+      if (searchInput) {
+        searchInput.blur();
+      }
     }
   });
 
@@ -73,11 +78,21 @@
     if (searchBarDisplay) {
       searchBar.style.height = "48px";
       searchBar.style.opacity = "100%";
+      // Focus the input field after a small delay to ensure the element is visible
+      setTimeout(() => {
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }, 100);
     } else {
       searchBar.style.height = "0px";
       searchBar.style.opacity = "0";
       searchKeyword = "";
       search("");
+      // Blur the input to hide keyboard
+      if (searchInput) {
+        searchInput.blur();
+      }
     }
   };
 
@@ -111,10 +126,15 @@
       </label>
       <input
         id="search-bar-input-mobile"
+        bind:this={searchInput}
         class="text-[var(--text-color)] grow bg-transparent outline-none transition-all"
         placeholder={i18n(I18nKeys.nav_bar_search_placeholder)}
-        type="text"
+        type="search"
+        inputmode="search"
         autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
         on:focus={() => {
           search(searchKeyword);
         }}
