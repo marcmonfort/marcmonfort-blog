@@ -5,7 +5,7 @@ description: I built a lightweight mixed reality prototype in Shanghai to overla
 published: 2025-08-19
 tags: [Mixed Reality, AR]
 category: Projects
-cover: "/posts/2025-08-19-shanghai-fuxing-island/cover.png"
+cover: "/posts/2025-08-19-shanghai-fuxing-island/cover.webp"
 coverPosition: center
 draft: false
 ---
@@ -30,14 +30,14 @@ Built with 8thwall (WebXR) to run directly in the mobile browser—no app instal
 - You can visualize a 3D animation of the historic shipyard crane on your surroundings.
 
 <div style="display:flex;justify-content:center;">
-	<img src="/posts/2025-08-19-shanghai-fuxing-island/8th.png" alt="Scan to try the MR crane demo (8thwall)" style="width:100%;max-width:900px;border-radius:8px;" />
+	<img src="/posts/2025-08-19-shanghai-fuxing-island/8th.webp" alt="Scan to try the MR crane demo (8thwall)" style="width:100%;max-width:900px;border-radius:8px;" />
 </div>
 
 ### Authoring in 8thwall
 The scene was assembled and iterated in 8thwall’s web editor. Below is a snapshot of the workspace used to place models, media, and simple interactions:
 
 <div style="display:flex;justify-content:center;">
-	<img src="/posts/2025-08-19-shanghai-fuxing-island/8th-2.png" alt="8thwall editor workspace for the Fuxing Island MR demo" style="width:100%;max-width:900px;border-radius:8px;" />
+	<img src="/posts/2025-08-19-shanghai-fuxing-island/8th-2.webp" alt="8thwall editor workspace for the Fuxing Island MR demo" style="width:100%;max-width:900px;border-radius:8px;" />
 </div>
 
 
