@@ -8,7 +8,7 @@ category: Projects
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/break-in"
 # cover: "/posts/2020-12-23-break_in-game/break_in-demo-cover.webp"
-cover: "/posts/2020-12-23-break_in-game/break_in_demo.gif"
+cover: "/posts/2020-12-23-break_in-game/break_in_demo-3.gif"
 coverPosition: bottom
 draft: false
 ---
