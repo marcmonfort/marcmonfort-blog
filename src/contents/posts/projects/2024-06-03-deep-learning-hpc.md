@@ -6,7 +6,10 @@ published: 2024-06-03
 tags: [Deep Learning, HPC, MareNostrum5, Slurm, BSC]
 category: Projects
 cover: /posts/2024-06-03-deep-learning-hpc/MN5.jpg
+coverPosition: center
 draft: false
+author: Marc Monfort
+sourceLink: "https://github.com/marcmonfort/DL-HPC"
 ---
 
 # Deep Learning on HPC – MareNostrum5
