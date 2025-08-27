@@ -7,7 +7,7 @@ category: Projects
 licenseName: "MIT"
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/SmartCity-Multiagent"
-cover: "/posts/smart_city_multiagent.gif"
+cover: "/posts/smart_city_multiagent-2.gif"
 draft: false
 ---
 

@@ -7,7 +7,8 @@ category: Projects
 # licenseName: "Unlicensed"
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/break-in"
-cover: "/posts/break_in-demo-cover.webp"
+# cover: "/posts/2020-12-23-break_in-game/break_in-demo-cover.webp"
+cover: "/posts/2020-12-23-break_in-game/break_in_demo.gif"
 coverPosition: bottom
 draft: false
 ---
