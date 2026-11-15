@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import YukinaConfig from "../../yukina.config";
 import { GetSortedPosts } from "../utils/content";
-import { IdToSlug } from "../utils/hash";
+import { PostIdToSlug } from "../utils/hash";
 
 export async function GET(context: APIContext) {
   // Newest first, drafts excluded.
@@ -17,7 +17,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       description: post.data.description ?? post.data.subtitle,
       pubDate: post.data.published,
-      link: `/posts/${IdToSlug(post.id)}`,
+      link: `/posts/${PostIdToSlug(post.id)}`,
       categories: post.data.tags,
       author: post.data.author,
     })),

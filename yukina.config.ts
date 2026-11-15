@@ -66,7 +66,7 @@ const YukinaConfig: Configuration = {
     "/banners/china-wall.webp",
   ],
 
-  slugMode: "HASH", // 'RAW' | 'HASH'
+  slugMode: "RAW", // 'RAW' (readable URLs) | 'HASH'
 
   license: {
     name: "CC BY-NC-SA 4.0",

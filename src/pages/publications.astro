@@ -2,12 +2,12 @@
 import { getCollection } from "astro:content";
 import Main from "../layouts/MainLayout.astro";
 import { publications, SELF } from "../data/publications";
-import { IdToSlug } from "../utils/hash";
+import { PostIdToSlug } from "../utils/hash";
 
 const posts = await getCollection("posts");
 function postHref(name: string): string | undefined {
   const entry = posts.find((p) => p.id.endsWith(name));
-  return entry && `/posts/${IdToSlug(entry.id)}`;
+  return entry && `/posts/${PostIdToSlug(entry.id)}`;
 }
 
 const scholar = "https://scholar.google.com/citations?user=EtRPHcQAAAAJ&hl=en";

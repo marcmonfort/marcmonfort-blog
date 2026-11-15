@@ -65,11 +65,30 @@ import YukinaConfig from "../../yukina.config";
       <div></div>
     </div>
     <div
-      class="flex w-full flex-col items-center text-sm text-[var(--text-color-lighten)]"
+      class="flex w-full flex-col items-center space-y-1 px-2 text-center text-sm text-[var(--text-color-lighten)]"
     >
       <p>
         © {new Date().getFullYear()}
-        {YukinaConfig.username} All Rights Reserved.
+        {YukinaConfig.username} · Content licensed under
+        <a
+          class="link whitespace-nowrap"
+          href={YukinaConfig.license.url}
+          target="_blank"
+          >{YukinaConfig.license.name}</a
+        > unless noted otherwise
+      </p>
+      <p>
+        Built with <a class="link" href="https://astro.build/" target="_blank"
+          >Astro</a
+        > and the <a
+          class="link"
+          href="https://github.com/WhitePaper233/yukina"
+          target="_blank">Yukina</a
+        > theme · <a
+          class="link"
+          href="https://github.com/marcmonfort/marcmonfort-blog"
+          target="_blank">Source</a
+        > · <a class="link" href="/rss.xml" target="_blank">RSS</a>
       </p>
     </div>
   </footer>

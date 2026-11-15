@@ -6,7 +6,7 @@
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import YukinaConfig from "../../yukina.config";
-import { IdToSlug } from "../utils/hash";
+import { PostIdToSlug } from "../utils/hash";
 
 const posts = await getCollection("posts");
 
@@ -14,7 +14,7 @@ const posts = await getCollection("posts");
 function post(name: string): string {
   const entry = posts.find((p) => p.id.endsWith(name));
   if (!entry) throw new Error(`Intro.astro: no post matching "${name}"`);
-  return `/posts/${IdToSlug(entry.id)}`;
+  return `/posts/${PostIdToSlug(entry.id)}`;
 }
 
 const links = [
@@ -40,6 +40,11 @@ const links = [
     href: "https://github.com/marcmonfort",
     icon: "mdi:github",
   },
+  {
+    label: "Email",
+    href: "mailto:marc.monfort@gmail.com",
+    icon: "mdi:email-outline",
+  },
 ];
 ---
 
@@ -54,44 +59,23 @@ const links = [
   <div class="intro-body">
     <h2 id="intro-title" class="intro-title">Hi, I'm Marc Monfort.</h2>
     <p class="intro-lead">
-      A doctoral researcher at Aalto University working on AI, multi-agent
-      systems and high-performance computing.
-    </p>
-    <p>
-      My PhD at <a href="https://www.aalto.fi/en" target="_blank"
+      Doctoral researcher at <a href="https://www.aalto.fi/en" target="_blank"
         >Aalto University</a
-      > is on <strong>social intrinsic motivation</strong> for multi-agent
-      reinforcement learning: building artificial agents that are more
-      reliable, proactive and trustworthy. Before that I spent four years as a
-      research engineer at the <a href="https://www.bsc.es/" target="_blank"
-        >Barcelona Supercomputing Center (BSC)</a
-      >, developing <a href={post("dataclay")}>dataClay</a>, a distributed
-      object store for HPC deployed on MareNostrum 5.
+      >, working on multi-agent reinforcement learning.
     </p>
     <p>
-      My research started with <a href={post("tinyml-fl")}>federated learning
-      on microcontrollers</a>, published in <em>Electronics</em> and at ACM
-      GoodIT. I've also worked on <a href={post("multiagent-deep-rl-matd3")}
-        >multi-agent reinforcement learning</a
-      >, <a href={post("deep-learning-hpc")}>deep learning on MareNostrum 5</a>,
-      and AI for 5G/6G mobile networks during a research visit at NTUST in
-      Taiwan.
+      My PhD is on <strong>social intrinsic motivation</strong>: building
+      artificial agents that are more reliable, proactive and trustworthy.
+      Before that I spent four years at the <a
+        href="https://www.bsc.es/"
+        target="_blank">Barcelona Supercomputing Center</a
+      >, building <a href={post("dataclay")}>dataClay</a>, a distributed object
+      store for HPC.
     </p>
     <p>
-      I hold a Master's in Artificial Intelligence from the <a
-        href="https://www.upc.edu/en"
-        target="_blank">Universitat Politècnica de Catalunya (UPC)</a
-      >, specialising in distributed and multi-agent systems, with an exchange
-      at the <a href="https://english.bit.edu.cn/" target="_blank"
-        >Beijing Institute of Technology</a
-      >. Before that I did my Bachelor's in Computer Science at UPC.
-    </p>
-    <p>
-      Outside research I like building things: <a href={post("break_in-game")}
-        >game engines from scratch</a
-      >, a <a href={post("connect_four_ai_haskell")}>Connect Four AI in Haskell</a>,
-      a <a href={post("shanghai-fuxing-island")}>mixed-reality prototype</a> in
-      Shanghai, and <a href={post("web_portfolio")}>this self-hosted website</a>.
+      Below are my research and side projects, from <a href={post("tinyml-fl")}
+        >federated learning on microcontrollers</a
+      > to <a href={post("break_in-game")}>game engines built from scratch</a>.
     </p>
     <div class="intro-links">
       {

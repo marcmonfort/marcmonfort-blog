@@ -61,6 +61,10 @@ For the cover image, please use an aspect ratio of 1.9:1 to ensure it fits well 
 
 ## 📝 Writing Posts
 
+A post's URL comes from its file name, without the date prefix: `src/contents/posts/projects/2020-04-25-connect_four_ai_haskell.md` is served at `/posts/connect-four-ai-haskell`. Renaming a published post's file changes its URL, so add a redirect from the old URL in `astro.config.mjs`.
+
+Set `draft: true` to keep a post out of the production build; drafts still show with `pnpm dev`.
+
 Each post should include the following metadata in the frontmatter:
 
 ```yaml

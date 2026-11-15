@@ -13,15 +13,21 @@ import remarkMath from "remark-math";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 import YukinaConfig from "./yukina.config";
+import legacyRedirects from "./legacy-redirects.mjs";
 
 import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
   site: YukinaConfig.site,
-  // The About page was folded into the home page intro; keep old links working.
+  // Keep old links working:
+  // - the About page was folded into the home page intro
+  // - all projects now fit on the home page, so page 2 no longer exists
   redirects: {
     "/about": "/",
+    "/2": "/",
+    // Old hashed post, tag and category URLs -> readable ones
+    ...legacyRedirects,
   },
   integrations: [
     tailwind(),

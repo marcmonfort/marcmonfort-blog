@@ -1,13 +1,16 @@
 ---
 import { getCollection } from "astro:content";
-import { IdToSlug } from "../../utils/hash";
+import { PostIdToSlug } from "../../utils/hash";
 import PostLayout from "../../layouts/PostLayout.astro";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("posts");
+  // Drafts are previewable with `pnpm dev` but never built for production.
+  const postEntries = await getCollection("posts", ({ data }) =>
+    import.meta.env.PROD ? data.draft !== true : true,
+  );
   return postEntries.map((entry) => ({
-    params: { slug: IdToSlug(entry.id) },
+    params: { slug: PostIdToSlug(entry.id) },
     props: { entry },
   }));
 }

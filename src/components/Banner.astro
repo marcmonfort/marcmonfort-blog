@@ -191,8 +191,9 @@ const carouselAnimationTime = `${carouselImgsList.length * 6}s`;
     font-family: var(--title-font);
   }
 
+  /* Sized so "Marc Monfort" stays on one line, even on phones. */
   .title-index {
-    @apply mb-0 text-6xl leading-[4rem] sm:leading-[5rem] lg:mb-1 lg:text-8xl;
+    @apply mb-1 text-[2.5rem] leading-tight sm:text-6xl lg:text-7xl;
   }
 
   .title-normal {

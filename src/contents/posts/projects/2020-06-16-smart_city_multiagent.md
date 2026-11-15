@@ -7,7 +7,7 @@ tags: [Smart City, Multi-agent Systems, JADE, JENA, Ontology, Traffic Simulation
 category: Projects
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/SmartCity-Multiagent"
-cover: "/posts/2020-06-16-smart_city_multiagent/smart_city_multiagent-2.gif"
+cover: "/posts/2020-06-16-smart_city_multiagent/smart_city_multiagent-2.webp"
 draft: false
 ---
 
@@ -39,7 +39,7 @@ All knowledge is encoded in an **ontology**, created in Protégé, and queried v
 ## Architecture
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2020-06-16-smart_city_multiagent/smart_city_multiagent.gif" alt="Simulation demo of SmartCity multi-agent system" style="width:100%;max-width:400px;border-radius:8px;" />
+  <video src="/posts/2020-06-16-smart_city_multiagent/smart_city_multiagent.mp4" autoplay loop muted playsinline aria-label="Simulation demo of SmartCity multi-agent system" style="width:100%;max-width:400px;border-radius:8px;"></video>
 </div>
 
 **Figure – Demo of the SmartCity multi-agent traffic simulation.**

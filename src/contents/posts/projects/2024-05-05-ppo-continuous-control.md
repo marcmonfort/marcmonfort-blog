@@ -61,7 +61,7 @@ Goal: maximize forward progress, avoid falling, and minimize energy use.
 ![BipedalWalker-v3 Training Graph](/posts/2024-05-05-ppo-continuous-control/BipedalWalker-v3.png)
 
 **Learned Behavior**
-![BipedalWalker-v3](/posts/2024-05-05-ppo-continuous-control/BipedalWalker-v3.gif)
+<video src="/posts/2024-05-05-ppo-continuous-control/BipedalWalker-v3.mp4" autoplay loop muted playsinline aria-label="BipedalWalker-v3" style="max-width:100%;height:auto;"></video>
 
 ---
 

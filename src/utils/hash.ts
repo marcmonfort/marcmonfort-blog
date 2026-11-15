@@ -2,10 +2,22 @@ import YukinaConfig from "../../yukina.config";
 import CryptoJS from "crypto-js";
 
 /**
- * Converts a given slug to a hashed slug or returns the raw slug based on the configuration.
+ * Turns text into a readable URL segment: "Multi-Agent Systems" -> "multi-agent-systems".
+ */
+export function Slugify(text: string): string {
+  return text
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "") // strip accents
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * Converts a tag or category name to its URL segment, based on the configured slug mode.
  *
- * @param slug - The input slug to be converted.
- * @returns The hashed slug if the configuration mode is "HASH", otherwise the raw slug.
+ * @param slug - The tag or category name.
+ * @returns An 8-character hash in "HASH" mode, otherwise a readable slug.
  */
 export function IdToSlug(slug: string): string {
   switch (YukinaConfig.slugMode) {
@@ -15,10 +27,22 @@ export function IdToSlug(slug: string): string {
       return hasedSlug;
     }
     case "RAW":
-      return slug;
     default:
-      return slug;
+      return Slugify(slug);
   }
+}
+
+/**
+ * Converts a post's collection id to its URL segment.
+ *
+ * In "RAW" mode the folder and date prefix of the file name are dropped:
+ * "projects/2020-04-25-connect_four_ai_haskell" -> "connect-four-ai-haskell".
+ * To change a post's URL, rename its file (and add a redirect from the old URL).
+ */
+export function PostIdToSlug(id: string): string {
+  if (YukinaConfig.slugMode === "HASH") return IdToSlug(id);
+  const fileName = id.split("/").pop() ?? id;
+  return Slugify(fileName.replace(/^\d{4}-\d{2}-\d{2}-/, ""));
 }
 
 /**

@@ -1,5 +1,5 @@
 ---
-import { IdToSlug } from "../utils/hash";
+import { IdToSlug, PostIdToSlug } from "../utils/hash";
 import { Icon } from "astro-icon/components";
 import PostCardInfoIcon from "./widgets/PostCardInfoIcon.astro";
 import { GetCoverURLForUnspecifiedEntry } from "../utils/cover";
@@ -21,7 +21,7 @@ export interface Props {
 }
 
 const props = Astro.props;
-const entryID = IdToSlug(props.id);
+const entryID = PostIdToSlug(props.id);
 const contentUrl = `/posts/${entryID}`;
 const { time, wordCount } = props.readingMetadata;
 ---
