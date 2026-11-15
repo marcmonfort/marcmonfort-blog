@@ -1,0 +1,156 @@
+---
+/**
+ * Short "who I am" introduction shown at the top of the home page.
+ * Edit the text below to keep it current.
+ */
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import YukinaConfig from "../../yukina.config";
+import { IdToSlug } from "../utils/hash";
+
+const posts = await getCollection("posts");
+
+/** Link to a post by the end of its file name, e.g. "dataclay". */
+function post(name: string): string {
+  const entry = posts.find((p) => p.id.endsWith(name));
+  if (!entry) throw new Error(`Intro.astro: no post matching "${name}"`);
+  return `/posts/${IdToSlug(entry.id)}`;
+}
+
+const links = [
+  {
+    // Replace public/cv.pdf with the latest CV (web version, no phone number).
+    label: "CV (PDF)",
+    href: "/cv.pdf",
+    icon: "mdi:file-account-outline",
+    primary: true,
+  },
+  {
+    label: "Publications",
+    href: "/publications",
+    icon: "mdi:book-open-page-variant-outline",
+  },
+  {
+    label: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=EtRPHcQAAAAJ&hl=en",
+    icon: "mdi:school-outline",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/marcmonfort",
+    icon: "mdi:github",
+  },
+];
+---
+
+<section class="intro" aria-labelledby="intro-title">
+  <img
+    src={YukinaConfig.avatarUrl}
+    alt="Marc Monfort"
+    width="112"
+    height="112"
+    class="intro-photo"
+  />
+  <div class="intro-body">
+    <h2 id="intro-title" class="intro-title">Hi, I'm Marc Monfort.</h2>
+    <p class="intro-lead">
+      A doctoral researcher at Aalto University working on AI, multi-agent
+      systems and high-performance computing.
+    </p>
+    <p>
+      My PhD at <a href="https://www.aalto.fi/en" target="_blank"
+        >Aalto University</a
+      > is on <strong>social intrinsic motivation</strong> for multi-agent
+      reinforcement learning: building artificial agents that are more
+      reliable, proactive and trustworthy. Before that I spent four years as a
+      research engineer at the <a href="https://www.bsc.es/" target="_blank"
+        >Barcelona Supercomputing Center (BSC)</a
+      >, developing <a href={post("dataclay")}>dataClay</a>, a distributed
+      object store for HPC deployed on MareNostrum 5.
+    </p>
+    <p>
+      My research started with <a href={post("tinyml-fl")}>federated learning
+      on microcontrollers</a>, published in <em>Electronics</em> and at ACM
+      GoodIT. I've also worked on <a href={post("multiagent-deep-rl-matd3")}
+        >multi-agent reinforcement learning</a
+      >, <a href={post("deep-learning-hpc")}>deep learning on MareNostrum 5</a>,
+      and AI for 5G/6G mobile networks during a research visit at NTUST in
+      Taiwan.
+    </p>
+    <p>
+      I hold a Master's in Artificial Intelligence from the <a
+        href="https://www.upc.edu/en"
+        target="_blank">Universitat Politècnica de Catalunya (UPC)</a
+      >, specialising in distributed and multi-agent systems, with an exchange
+      at the <a href="https://english.bit.edu.cn/" target="_blank"
+        >Beijing Institute of Technology</a
+      >. Before that I did my Bachelor's in Computer Science at UPC.
+    </p>
+    <p>
+      Outside research I like building things: <a href={post("break_in-game")}
+        >game engines from scratch</a
+      >, a <a href={post("connect_four_ai_haskell")}>Connect Four AI in Haskell</a>,
+      a <a href={post("shanghai-fuxing-island")}>mixed-reality prototype</a> in
+      Shanghai, and <a href={post("web_portfolio")}>this self-hosted website</a>.
+    </p>
+    <div class="intro-links">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={["intro-link", { "intro-link-primary": link.primary }]}
+            target={/^http|\.pdf$/.test(link.href) ? "_blank" : undefined}
+          >
+            <Icon name={link.icon} size={18} />
+            <span>{link.label}</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro {
+    @apply mx-3 flex flex-col items-center gap-6 rounded-3xl bg-[var(--card-color)] px-6 py-7 lg:mx-0 lg:flex-row lg:items-start lg:px-9 lg:py-8;
+  }
+
+  /* On wide screens the sidebar already shows the profile photo. */
+  .intro-photo {
+    @apply h-28 w-28 shrink-0 select-none rounded-full object-cover xl:hidden;
+  }
+
+  .intro-body {
+    @apply flex flex-col gap-3 text-[var(--text-color)];
+    font-family: var(--primary-font);
+    line-height: 1.7;
+  }
+
+  .intro-title {
+    @apply text-2xl font-bold lg:text-3xl;
+    font-family: var(--brand-font);
+  }
+
+  .intro-lead {
+    @apply text-lg text-[var(--text-color-lighten)];
+  }
+
+  .intro-body a:not(.intro-link) {
+    @apply text-[var(--primary-color)] underline decoration-[var(--primary-color-transparent)] decoration-2 underline-offset-4 transition-colors;
+    @apply hover:decoration-[var(--primary-color)];
+  }
+
+  .intro-links {
+    @apply mt-2 flex flex-wrap gap-2;
+  }
+
+  .intro-link {
+    @apply flex items-center gap-1.5 rounded-lg bg-[var(--primary-color-lighten)] px-3.5 py-2 text-sm font-medium text-[var(--primary-color)] transition-all;
+    @apply hover:bg-[var(--primary-color-hover)] active:scale-95;
+  }
+
+  .intro-link-primary {
+    @apply bg-[var(--primary-color)] text-white;
+    @apply hover:bg-[var(--primary-color)] hover:brightness-110;
+  }
+</style>

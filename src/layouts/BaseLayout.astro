@@ -1,10 +1,21 @@
 ---
 import YukinaConfig from "../../yukina.config";
 import BaseHead from "../components/BaseHead.astro";
+import type { Props as HeadProps } from "../components/BaseHead.astro";
+
+export interface Props {
+  head?: HeadProps;
+}
+
+const { head = {} } = Astro.props;
 ---
 
 <html lang={YukinaConfig.locale}>
-  <BaseHead />
+  <head>
+    <BaseHead {...head}>
+      <slot name="head" />
+    </BaseHead>
+  </head>
   <body class="overflow-y-hidden">
     <slot />
   </body>

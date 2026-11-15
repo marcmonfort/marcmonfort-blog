@@ -19,6 +19,10 @@ import pagefind from "astro-pagefind";
 // https://astro.build/config
 export default defineConfig({
   site: YukinaConfig.site,
+  // The About page was folded into the home page intro; keep old links working.
+  redirects: {
+    "/about": "/",
+  },
   integrations: [
     tailwind(),
     svelte(),

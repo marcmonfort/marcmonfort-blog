@@ -15,6 +15,7 @@ interface Props {
   };
   author?: string;
   sourceLink?: string;
+  description?: string;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   license,
   author,
   sourceLink,
+  description,
 } = Astro.props;
 ---
 
@@ -35,6 +37,9 @@ const {
   bannerImage={bannerImage}
   coverPosition={coverPosition}
   hideBanner={true}
+  description={description ?? subTitle}
+  ogImage={bannerImage}
+  ogType="article"
 >
   <!-- <Fragment set:html={tocHTMLString} /> -->
   <div class="article-wrapper">

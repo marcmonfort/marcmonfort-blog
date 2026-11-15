@@ -1,0 +1,127 @@
+---
+import { getCollection } from "astro:content";
+import Main from "../layouts/MainLayout.astro";
+import { publications, SELF } from "../data/publications";
+import { IdToSlug } from "../utils/hash";
+
+const posts = await getCollection("posts");
+function postHref(name: string): string | undefined {
+  const entry = posts.find((p) => p.id.endsWith(name));
+  return entry && `/posts/${IdToSlug(entry.id)}`;
+}
+
+const scholar = "https://scholar.google.com/citations?user=EtRPHcQAAAAJ&hl=en";
+---
+
+<Main
+  title="Publications"
+  subTitle="Peer-reviewed papers and theses"
+  description="Publications by Marc Monfort on on-device training and federated learning for microcontrollers (TinyML)."
+  hideBanner={true}
+>
+  <div class="publications">
+    <h1 class="page-title">Publications</h1>
+    <p class="page-note">
+      Also on <a href={scholar} target="_blank">Google Scholar</a>.
+    </p>
+    <ol class="pub-list">
+      {
+        publications.map((pub, index) => {
+          const related = pub.post ? postHref(pub.post) : undefined;
+          return (
+            <li
+              class="pub onload-animation"
+              style={`animation-delay: calc(var(--onload-animation-delay) + ${index} * var(--onload-animation-interval));`}
+            >
+              <div class="pub-meta">
+                <span class="pub-year">{pub.year}</span>
+                <span class="pub-type">{pub.type}</span>
+              </div>
+              <div class="pub-body">
+                <p class="pub-title">{pub.title}</p>
+                <p class="pub-authors">
+                  {pub.authors.map((author, i) => (
+                    <>
+                      {author === SELF ? <strong>{author}</strong> : author}
+                      {i < pub.authors.length - 1 && ", "}
+                    </>
+                  ))}
+                </p>
+                <p class="pub-venue">{pub.venue}</p>
+                <div class="pub-links">
+                  {pub.links.map((link) => (
+                    <a href={link.href} target="_blank">
+                      {link.label}
+                    </a>
+                  ))}
+                  {related && <a href={related}>Project write-up</a>}
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</Main>
+
+<style>
+  .publications {
+    @apply mx-3 rounded-2xl bg-[var(--card-color)] px-5 py-6 text-[var(--text-color)] lg:mx-0 lg:px-10 lg:py-9;
+    font-family: var(--primary-font);
+  }
+
+  .page-title {
+    @apply border-l-4 border-[var(--primary-color)] pl-3 text-3xl font-bold;
+    font-family: var(--brand-font);
+  }
+
+  .page-note {
+    @apply mt-3 text-[var(--text-color-lighten)];
+  }
+
+  .page-note a {
+    @apply text-[var(--primary-color)] underline underline-offset-4;
+  }
+
+  .pub-list {
+    @apply mt-6 flex flex-col divide-y divide-[var(--primary-color-lighten)];
+  }
+
+  .pub {
+    @apply flex flex-col gap-2 py-5 sm:flex-row sm:gap-6;
+  }
+
+  .pub-meta {
+    @apply flex shrink-0 flex-row items-center gap-2 sm:w-24 sm:flex-col sm:items-start sm:gap-1;
+  }
+
+  .pub-year {
+    @apply text-lg font-bold text-[var(--primary-color)];
+  }
+
+  .pub-type {
+    @apply rounded-md bg-[var(--primary-color-lighten)] px-2 py-0.5 text-xs font-medium text-[var(--primary-color)];
+  }
+
+  .pub-title {
+    @apply text-lg font-semibold leading-snug;
+  }
+
+  .pub-authors {
+    @apply mt-1 text-[var(--text-color-lighten)];
+  }
+
+  .pub-venue {
+    @apply mt-0.5 text-sm italic text-[var(--text-color-lighten)];
+  }
+
+  .pub-links {
+    @apply mt-2 flex flex-wrap gap-2;
+  }
+
+  .pub-links a {
+    @apply rounded-lg bg-[var(--primary-color-lighten)] px-3 py-1 text-sm font-medium text-[var(--primary-color)] transition-all;
+    @apply hover:bg-[var(--primary-color-hover)] active:scale-95;
+  }
+</style>

@@ -3,6 +3,8 @@
 import Main from "../layouts/MainLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import Pagination from "../components/controllers/Pagination.astro";
+import Intro from "../components/Intro.astro";
+import YukinaConfig from "../../yukina.config";
 // Utils
 import type { PaginateFunction } from "astro";
 import { GetSortedPosts } from "../utils/content";
@@ -16,11 +18,65 @@ export async function getStaticPaths({
   return paginate(postCollections, { pageSize: 6 });
 }
 const { page } = Astro.props;
+const isFirstPage = page.currentPage === 1;
+
+// Structured data so search engines know who this site is about.
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: YukinaConfig.username,
+  jobTitle: YukinaConfig.sign,
+  url: YukinaConfig.site,
+  image: new URL(YukinaConfig.ogImage, YukinaConfig.site).href,
+  worksFor: {
+    "@type": "CollegeOrUniversity",
+    name: "Aalto University",
+    url: "https://www.aalto.fi/en",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universitat Politècnica de Catalunya",
+    url: "https://www.upc.edu/en",
+  },
+  sameAs: [
+    ...YukinaConfig.socialLinks.map((s) => s.link),
+    "https://scholar.google.com/citations?user=EtRPHcQAAAAJ",
+  ],
+};
 ---
 
-<Main>
+<Main pageTitle={isFirstPage ? undefined : `Projects – Page ${page.currentPage}`}>
+  {
+    isFirstPage && (
+      <script
+        slot="head"
+        type="application/ld+json"
+        set:html={JSON.stringify(person)}
+      />
+    )
+  }
   <div class="space-y-8">
+    {
+      isFirstPage && (
+        <div
+          class="onload-animation"
+          style="animation-delay: var(--onload-animation-delay);"
+        >
+          <Intro />
+        </div>
+      )
+    }
     <div class="w-full space-y-4">
+      {
+        isFirstPage && (
+          <h2
+            class="onload-animation section-title"
+            style="animation-delay: calc(var(--onload-animation-delay) + var(--onload-animation-interval));"
+          >
+            Projects
+          </h2>
+        )
+      }
       {
         page.data.map((entry, index) => (
           <div
@@ -54,3 +110,10 @@ const { page } = Astro.props;
     />
   </div>
 </Main>
+
+<style>
+  .section-title {
+    @apply mx-3 border-l-4 border-[var(--primary-color)] pl-3 text-2xl font-bold text-[var(--text-color)] lg:mx-0;
+    font-family: var(--brand-font);
+  }
+</style>

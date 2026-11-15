@@ -78,3 +78,7 @@ coverPosition: top # Optional, default is center
 draft: false
 ```
 
+
+## 📄 Updating the CV
+
+The CV button on the home page opens `public/cv.pdf` (served at `/cv.pdf`). To update it, overwrite that file with the latest **web version** of the CV (without the phone number), keeping the same file name so existing links keep working.

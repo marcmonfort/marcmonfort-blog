@@ -3,10 +3,11 @@ import type { Configuration } from "./src/types/config";
 
 const YukinaConfig: Configuration = {
   title: "Marc Monfort",
-  subTitle: "Research Engineer",
+  subTitle: "Doctoral Researcher",
   brandTitle: "Marc Monfort",
 
-  description: "Portfolio Site",
+  description:
+    "Marc Monfort – Doctoral Researcher at Aalto University working on AI, multi-agent reinforcement learning and high-performance computing (HPC). Projects, research and publications.",
 
   site: "https://marcmonfort.com",
 
@@ -23,8 +24,8 @@ const YukinaConfig: Configuration = {
     //   href: "/archive",
     // },
     {
-      nameKey: I18nKeys.nav_bar_about,
-      href: "/about",
+      nameKey: I18nKeys.nav_bar_publications,
+      href: "/publications",
     },
     {
       nameKey: I18nKeys.nav_bar_github,
@@ -33,8 +34,9 @@ const YukinaConfig: Configuration = {
   ],
 
   username: "Marc Monfort",
-  sign: "Research Engineer",
-  avatarUrl: "/about/profile-photo.webp",
+  sign: "Doctoral Researcher",
+  avatarUrl: "/about/profile-photo-512.webp",
+  ogImage: "/about/og-default.jpg",
   socialLinks: [
     {
       icon: "line-md:github-loop",

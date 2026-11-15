@@ -21,6 +21,7 @@ const { Content } = await render(entry);
     <PostLayout
       title={entry.data.title}
       subTitle={entry.data.subtitle || entry.data.description}
+      description={entry.data.description}
       bannerImage={entry.data.cover}
       coverPosition={entry.data.coverPosition}
       published={entry.data.published}
@@ -46,6 +47,7 @@ const { Content } = await render(entry);
     <PostLayout
       title={entry.data.title}
       subTitle={entry.data.subtitle || entry.data.description}
+      description={entry.data.description}
       bannerImage={entry.data.cover}
       coverPosition={entry.data.coverPosition}
       published={entry.data.published}

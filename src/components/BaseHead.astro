@@ -3,36 +3,62 @@ import YukinaConfig from "../../yukina.config";
 import GlobalStyles from "./GlobalStyles.astro";
 import ScriptSetup from "./ScriptSetup.astro";
 
+export interface Props {
+  /** Page-specific title. The site name is appended automatically. */
+  title?: string;
+  /** Page-specific description used for search results and link previews. */
+  description?: string;
+  /** Preview image (absolute URL or path under /public). */
+  image?: string;
+  /** Open Graph type: "website" for listings, "article" for posts. */
+  type?: "website" | "article";
+}
+
+const { title, description, image, type = "website" } = Astro.props;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const pageTitle = title
+  ? `${title} | ${YukinaConfig.title}`
+  : `${YukinaConfig.title} – ${YukinaConfig.subTitle}`;
+const pageDescription = description ?? YukinaConfig.description;
+
+// Social platforms need an absolute URL. Fall back to the profile photo.
+const hasCustomImage = image !== undefined;
+const imageURL = new URL(image ?? YukinaConfig.ogImage, Astro.site).href;
+// A post cover reads well as a large card; the square profile photo does not.
+const twitterCard = hasCustomImage ? "summary_large_image" : "summary";
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/logos/MM_logo_circular_crop.png" />
+<link rel="icon" type="image/png" href="/logos/MM_logo_circular_crop.png" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{YukinaConfig.title}</title>
-<meta name="title" content={YukinaConfig.title} />
-<meta name="description" content={YukinaConfig.description} />
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
+<meta name="description" content={pageDescription} />
+<meta name="author" content={YukinaConfig.username} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={YukinaConfig.title} />
-<meta property="og:description" content={YukinaConfig.description} />
-<!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={YukinaConfig.title} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:image" content={imageURL} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={YukinaConfig.title} />
-<meta property="twitter:description" content={YukinaConfig.description} />
-<!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+<meta name="twitter:card" content={twitterCard} />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<meta name="twitter:image" content={imageURL} />
 
 <!-- RSS AutoDiscovery -->
 <link
@@ -45,15 +71,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- SiteMap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
+<!-- Page-specific head elements (e.g. structured data) -->
+<slot />
+
 <!-- CSS -->
+<!-- Pinned to the KaTeX version rehype-katex renders with; update both together. -->
 <link
   rel="stylesheet"
-  href="https://fastly.jsdelivr.net/npm/katex/dist/katex.min.css"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.20/dist/katex.min.css"
+  integrity="sha384-sMefv1J1YJCHsg0mTa9YG+n/9KnJb9lGrJUUY5arg6bAL1qps/oZjmUwaHlX5Ugg"
+  crossorigin="anonymous"
 />
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.bunny.net" />
 <link
-  href="https://fonts.bunny.net/css?family=noto-sans-sc:100,200,300,400,500,600,700,800,900|raleway:500,700"
+  href="https://fonts.bunny.net/css?family=noto-sans:400,400i,500,600,700,800|raleway:500,700"
   rel="stylesheet"
 />
 

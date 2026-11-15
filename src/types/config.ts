@@ -13,9 +13,12 @@ interface Configuration {
 
   navigators: { nameKey: I18nKeys; href: string }[];
 
+
   username: string;
   sign: string;
   avatarUrl: string;
+  /** Default link-preview image, used when a page has no cover. */
+  ogImage: string;
 
   socialLinks: { icon: string; link: string }[];
 

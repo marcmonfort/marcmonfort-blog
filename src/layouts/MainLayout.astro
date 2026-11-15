@@ -14,12 +14,26 @@ export interface Props {
   coverPosition?: "top" | "center" | "bottom";
   slug?: string;
   hideBanner?: boolean;
+  /** Title for the browser tab and search results. Defaults to `title`. */
+  pageTitle?: string;
+  /** Description for search results and link previews. Defaults to `subTitle`. */
+  description?: string;
+  /** Preview image for link previews. */
+  ogImage?: string;
+  ogType?: "website" | "article";
 }
 
 const props = Astro.props;
+const head = {
+  title: props.pageTitle ?? props.title,
+  description: props.description ?? props.subTitle,
+  image: props.ogImage,
+  type: props.ogType,
+};
 ---
 
-<Base>
+<Base head={head}>
+  <slot name="head" slot="head" />
   <NavBar />
 
   <div id="banner-container" class={props.hideBanner ? "mt-20" : ""}>
