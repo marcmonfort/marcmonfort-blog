@@ -6,7 +6,7 @@
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import YukinaConfig from "../../yukina.config";
-import { PostIdToSlug } from "../utils/hash";
+import { PostIdToSlug } from "../utils/slug";
 
 const posts = await getCollection("posts");
 
@@ -17,7 +17,21 @@ function post(name: string): string {
   return `/posts/${PostIdToSlug(entry.id)}`;
 }
 
-const links = [
+/**
+ * Email address, kept out of the HTML so scrapers don't harvest it.
+ * It is stored reversed and base64-encoded, and the script at the bottom
+ * rebuilds the mailto: link only when someone clicks the button.
+ */
+// Generate with: node -e 'console.log(btoa([..."you@example.com"].reverse().join("")))'
+const encodedEmail = "bW9jLmxpYW1nQHRyb2Zub20uY3JhbQ==";
+
+const links: {
+  label: string;
+  href: string;
+  icon: string;
+  primary?: boolean;
+  email?: boolean;
+}[] = [
   {
     // Replace public/cv.pdf with the latest CV (web version, no phone number).
     label: "CV (PDF)",
@@ -42,8 +56,10 @@ const links = [
   },
   {
     label: "Email",
-    href: "mailto:marc.monfort@gmail.com",
+    // Fallback without JavaScript: the CV, which lists the address.
+    href: "/cv.pdf",
     icon: "mdi:email-outline",
+    email: true,
   },
 ];
 ---
@@ -84,6 +100,7 @@ const links = [
             href={link.href}
             class:list={["intro-link", { "intro-link-primary": link.primary }]}
             target={/^http|\.pdf$/.test(link.href) ? "_blank" : undefined}
+            data-email={link.email ? encodedEmail : undefined}
           >
             <Icon name={link.icon} size={18} />
             <span>{link.label}</span>
@@ -93,6 +110,20 @@ const links = [
     </div>
   </div>
 </section>
+
+<script>
+  // Rebuild the email link on click. The listener sits on the document, so it
+  // keeps working after page transitions (swup) re-render the intro.
+  document.addEventListener("click", (event) => {
+    const link = (event.target as Element | null)?.closest<HTMLAnchorElement>(
+      "a[data-email]",
+    );
+    if (!link) return;
+    event.preventDefault();
+    const address = [...atob(link.dataset.email!)].reverse().join("");
+    window.location.href = `mailto:${address}`;
+  });
+</script>
 
 <style>
   .intro {

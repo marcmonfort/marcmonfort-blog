@@ -5,7 +5,7 @@ description: Technical exploration of cooperative multi-agent deep reinforcement
 published: 2024-05-27
 tags: [Reinforcement Learning, Multi-Agent Systems]
 category: Projects
-cover: "/posts/2024-05-27-multiagent-deep-rl-matd3/simple_spread_MATD3-2.webp"
+cover: "/posts/multiagent-deep-rl-matd3/cover.webp"
 coverPosition: center
 draft: false
 author: Marc Monfort
@@ -23,7 +23,7 @@ The goal was to compare two learning strategies:
 The experiments were conducted in the **Simple Spread** and **Simple Speaker Listener** environments from the [PettingZoo MPE suite](https://pettingzoo.farama.org/).
 
 <div style="display:flex;justify-content:center;">
-  <video src="/posts/2024-05-27-multiagent-deep-rl-matd3/simple_spread_MATD3-2.mp4" autoplay loop muted playsinline aria-label="Simple Spread environment with MATD3 agents" style="width:100%;max-width:700px;border-radius:8px;"></video>
+  <video src="/posts/multiagent-deep-rl-matd3/simple_spread_MATD3-2.mp4" autoplay loop muted playsinline aria-label="Simple Spread environment with MATD3 agents" style="width:100%;max-width:700px;border-radius:8px;"></video>
 </div>
 
 ---
@@ -54,13 +54,13 @@ MATD3 extends **TD3** to multi-agent settings with:
 ### MATD3 Pseudocode
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/matd3-code.png" alt="MATD3 pseudocode" style="width:100%;max-width:800px;border-radius:8px;" />
+  <img src="/posts/multiagent-deep-rl-matd3/results/matd3-code.png" alt="MATD3 pseudocode" style="width:100%;max-width:800px;border-radius:8px;" />
 </div>
 
 ### Actor-Critic Diagram
 
 <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:10px;">
-  <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/actor-critic-diagram.png" alt="MATD3 Actor-Critic Diagram" style="width:100%;max-width:500px;border-radius:8px;" />
+  <img src="/posts/multiagent-deep-rl-matd3/results/actor-critic-diagram.png" alt="MATD3 Actor-Critic Diagram" style="width:100%;max-width:500px;border-radius:8px;" />
 </div>
 
 ---
@@ -87,7 +87,7 @@ MATD3 extends **TD3** to multi-agent settings with:
 - **Metrics:** episodic reward, learning stability, task completion
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/speaker_MATD3_hyperparameter_evolution_v2.png" alt="Hyperparameter optimization in Speaker-Listener environment" style="width:100%;max-width:800px;border-radius:8px;" />
+  <img src="/posts/multiagent-deep-rl-matd3/results/speaker_MATD3_hyperparameter_evolution_v2.png" alt="Hyperparameter optimization in Speaker-Listener environment" style="width:100%;max-width:800px;border-radius:8px;" />
 </div>
 
 ---
@@ -100,16 +100,16 @@ MATD3 extends **TD3** to multi-agent settings with:
 
   <div style="flex:1;min-width:280px;text-align:center;">
     <p><strong>Independent Learners – Training Curve</strong></p>
-    <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/spread_independent_MATD3_training_progress_v2.png" alt="Training curve Independent Learners in Spread" style="width:100%;border-radius:8px;" />
+    <img src="/posts/multiagent-deep-rl-matd3/results/spread_independent_MATD3_training_progress_v2.png" alt="Training curve Independent Learners in Spread" style="width:100%;border-radius:8px;" />
     <p><strong>Independent Learners – Learned Behavior</strong></p>
-    <video src="/posts/2024-05-27-multiagent-deep-rl-matd3/simple_spread_independent_MATD3.mp4" autoplay loop muted playsinline aria-label="Independent Learners in Simple Spread" style="width:100%;border-radius:8px;margin-top:8px;"></video>
+    <video src="/posts/multiagent-deep-rl-matd3/simple_spread_independent_MATD3.mp4" autoplay loop muted playsinline aria-label="Independent Learners in Simple Spread" style="width:100%;border-radius:8px;margin-top:8px;"></video>
   </div>
 
   <div style="flex:1;min-width:280px;text-align:center;">
     <p><strong>Fully Observable Critic – Training Curve</strong></p>
-    <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/spread_MATD3_training_progress_v2.png" alt="Training curve Fully Observable Critic in Spread" style="width:100%;border-radius:8px;" />
+    <img src="/posts/multiagent-deep-rl-matd3/results/spread_MATD3_training_progress_v2.png" alt="Training curve Fully Observable Critic in Spread" style="width:100%;border-radius:8px;" />
     <p><strong>Fully Observable Critic – Learned Behavior</strong></p>
-    <video src="/posts/2024-05-27-multiagent-deep-rl-matd3/simple_spread_MATD3.mp4" autoplay loop muted playsinline aria-label="Fully Observable Critic in Simple Spread" style="width:100%;border-radius:8px;margin-top:8px;"></video>
+    <video src="/posts/multiagent-deep-rl-matd3/simple_spread_MATD3.mp4" autoplay loop muted playsinline aria-label="Fully Observable Critic in Simple Spread" style="width:100%;border-radius:8px;margin-top:8px;"></video>
   </div>
 
 </div>
@@ -122,16 +122,16 @@ MATD3 extends **TD3** to multi-agent settings with:
 
   <div style="flex:1;min-width:280px;text-align:center;">
     <p><strong>Independent Learners – Training Curve</strong></p>
-    <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/speaker_independent_MATD3_training_progress_v2.png" alt="Training curve Independent Learners in Speaker Listener" style="width:100%;border-radius:8px;" />
+    <img src="/posts/multiagent-deep-rl-matd3/results/speaker_independent_MATD3_training_progress_v2.png" alt="Training curve Independent Learners in Speaker Listener" style="width:100%;border-radius:8px;" />
     <p><strong>Independent Learners – Learned Behavior</strong></p>
-    <video src="/posts/2024-05-27-multiagent-deep-rl-matd3/simple_speaker_listener_independent_MATD3.mp4" autoplay loop muted playsinline aria-label="Independent Learners in Simple Speaker Listener" style="width:100%;border-radius:8px;margin-top:8px;"></video>
+    <video src="/posts/multiagent-deep-rl-matd3/simple_speaker_listener_independent_MATD3.mp4" autoplay loop muted playsinline aria-label="Independent Learners in Simple Speaker Listener" style="width:100%;border-radius:8px;margin-top:8px;"></video>
   </div>
 
   <div style="flex:1;min-width:280px;text-align:center;">
     <p><strong>Fully Observable Critic – Training Curve</strong></p>
-    <img src="/posts/2024-05-27-multiagent-deep-rl-matd3/results/speaker_MATD3_training_progress_v2.png" alt="Training curve Fully Observable Critic in Speaker Listener" style="width:100%;border-radius:8px;" />
+    <img src="/posts/multiagent-deep-rl-matd3/results/speaker_MATD3_training_progress_v2.png" alt="Training curve Fully Observable Critic in Speaker Listener" style="width:100%;border-radius:8px;" />
     <p><strong>Fully Observable Critic – Learned Behavior</strong></p>
-    <video src="/posts/2024-05-27-multiagent-deep-rl-matd3/simple_speaker_listener_MATD3.mp4" autoplay loop muted playsinline aria-label="Fully Observable Critic in Simple Speaker Listener" style="width:100%;border-radius:8px;margin-top:8px;"></video>
+    <video src="/posts/multiagent-deep-rl-matd3/simple_speaker_listener_MATD3.mp4" autoplay loop muted playsinline aria-label="Fully Observable Critic in Simple Speaker Listener" style="width:100%;border-radius:8px;margin-top:8px;"></video>
   </div>
 
 </div>

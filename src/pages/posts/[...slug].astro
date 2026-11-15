@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { PostIdToSlug } from "../../utils/hash";
+import { PostIdToSlug } from "../../utils/slug";
 import PostLayout from "../../layouts/PostLayout.astro";
 import { render } from "astro:content";
 
@@ -72,4 +72,3 @@ const { Content } = await render(entry);
     </PostLayout>
   )
 }
-<!-- <Fragment set:html={tocHTMLString} /> -->

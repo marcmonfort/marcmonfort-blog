@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import Main from "../layouts/MainLayout.astro";
 import { publications, SELF } from "../data/publications";
-import { PostIdToSlug } from "../utils/hash";
+import { PostIdToSlug } from "../utils/slug";
 
 const posts = await getCollection("posts");
 function postHref(name: string): string | undefined {

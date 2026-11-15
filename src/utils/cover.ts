@@ -1,4 +1,4 @@
-import { GetIndexFromSlugID } from "./hash";
+import { GetIndexFromSlugID } from "./slug";
 import YukinaConfig from "../../yukina.config";
 
 /**

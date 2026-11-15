@@ -6,7 +6,7 @@ published: 2020-04-25
 tags: [Haskell, AI, Minimax, Game]
 category: Projects
 licenseName: "Apache License 2.0"
-cover: /posts/2020-04-25-connect_four_ai_haskell/cover.webp
+cover: /posts/connect-four-ai-haskell/cover.webp
 coverPosition: top
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/ConnectFour"
@@ -20,10 +20,6 @@ This project is a **Haskell implementation of the Connect Four game**. The game 
 - Random
 - Greedy
 - Smart (Minimax with heuristic evaluation)
-
-<!-- <div style="display:flex;justify-content:center;">
-  <img src="/posts/connectfour/screenshot_board.webp" alt="Gameplay screenshot of Connect Four in Haskell" style="width:100%;max-width:700px;border-radius:8px;" />
-</div> -->
 
 ---
 
@@ -204,10 +200,6 @@ MAX at root → max(+3, -1000)  = +3  ⇒ choose Move A
 * **Win:** Four consecutive tokens aligned horizontally, vertically, or diagonally.
 * **Loss:** AI wins with its alignment.
 * **Draw:** The board fills with no winner.
-
-<!-- <div style="display:flex;justify-content:center;">
-  <img src="/posts/connectfour/screenshot_win.webp" alt="Player winning a Connect Four game" style="width:100%;max-width:700px;border-radius:8px;" />
-</div> -->
 
 ---
 

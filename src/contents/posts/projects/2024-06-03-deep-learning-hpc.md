@@ -5,7 +5,7 @@ description: Hands-on experience running deep learning workloads on the MareNost
 published: 2024-06-03
 tags: [Deep Learning, HPC, MareNostrum5, Slurm, BSC]
 category: Projects
-cover: /posts/2024-06-03-deep-learning-hpc/MN5.jpg
+cover: /posts/deep-learning-hpc/MN5.jpg
 coverPosition: center
 draft: false
 author: Marc Monfort
@@ -30,7 +30,7 @@ Key specs (general partition):
 - **Storage**: GPFS-based parallel file system, optimized for massive I/O throughput  
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-06-03-deep-learning-hpc/MN5.jpg" alt="MareNostrum5 supercomputer at BSC" style="width:100%;max-width:800px;border-radius:8px;" />
+  <img src="/posts/deep-learning-hpc/MN5.jpg" alt="MareNostrum5 supercomputer at BSC" style="width:100%;max-width:800px;border-radius:8px;" />
 </div>
 
 Unlike a personal machine, MN5 enables:
@@ -78,7 +78,7 @@ The first exercise focused on understanding **how different optimization algorit
 This experiment shows why modern optimizers like Adam and RMSProp are widely adopted—they combine speed with robustness.
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-06-03-deep-learning-hpc/results/exercise_1.png" alt="Optimizer comparison" style="width:100%;max-width:700px;border-radius:8px;" />
+  <img src="/posts/deep-learning-hpc/results/exercise_1.png" alt="Optimizer comparison" style="width:100%;max-width:700px;border-radius:8px;" />
 </div>
 
 ---
@@ -96,7 +96,7 @@ Key insights:
 This highlights that **optimizer choice alone is not enough**—learning rate tuning is critical. On HPC systems, running these sweeps in parallel shortens what could otherwise take days on a single machine.
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-06-03-deep-learning-hpc/results/exercise_2.png" alt="Learning rate sweep" style="width:100%;max-width:700px;border-radius:8px;" />
+  <img src="/posts/deep-learning-hpc/results/exercise_2.png" alt="Learning rate sweep" style="width:100%;max-width:700px;border-radius:8px;" />
 </div>
 
 ---
@@ -113,7 +113,7 @@ Techniques applied:
 These refinements resulted in a **remarkable 99.4% test accuracy**, close to state-of-the-art levels for MNIST. The training curve confirmed steady, near-perfect convergence.
 
 <div style="display:flex;justify-content:center;">
-  <img src="/posts/2024-06-03-deep-learning-hpc/results/exercise_3.png" alt="MNIST accuracy over time" style="width:100%;max-width:700px;border-radius:8px;" />
+  <img src="/posts/deep-learning-hpc/results/exercise_3.png" alt="MNIST accuracy over time" style="width:100%;max-width:700px;border-radius:8px;" />
 </div>
 
 ---

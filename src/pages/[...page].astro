@@ -50,6 +50,7 @@ const person = {
   {
     isFirstPage && (
       <script
+        is:inline
         slot="head"
         type="application/ld+json"
         set:html={JSON.stringify(person)}
@@ -93,9 +94,6 @@ const person = {
               description={entry.data.description}
               image={entry.data.cover}
               coverPosition={entry.data.coverPosition}
-              readingMetadata={
-                (entry.rendered!.metadata as any).frontmatter.readingMetadata
-              }
             />
           </div>
         ))

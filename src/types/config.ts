@@ -9,7 +9,7 @@ interface Configuration {
 
   site: string;
 
-  locale: "en" | "zh-CN";
+  locale: "en";
 
   navigators: { nameKey: I18nKeys; href: string }[];
 
@@ -22,14 +22,9 @@ interface Configuration {
 
   socialLinks: { icon: string; link: string }[];
 
-  maxSidebarCategoryChip: number;
-  maxSidebarTagChip: number;
-  maxFooterCategoryChip: number;
-  maxFooterTagChip: number;
 
   banners: string[];
 
-  slugMode: "HASH" | "RAW";
 
   license: {
     name: string;

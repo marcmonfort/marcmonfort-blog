@@ -4,11 +4,9 @@ published: 2020-12-23
 description: Technical demonstration of Break-In, a first-person stealth game prototype featuring lockpicking, custom physics, and rendering engine built from scratch.
 tags: [Game Engine, Rendering]
 category: Projects
-# licenseName: "Unlicensed"
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/break-in"
-# cover: "/posts/2020-12-23-break_in-game/break_in-demo-cover.webp"
-cover: "/posts/2020-12-23-break_in-game/break_in_demo-3.webp"
+cover: "/posts/break-in-game/cover.webp"
 coverPosition: bottom
 draft: false
 ---

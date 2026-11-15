@@ -18,11 +18,6 @@ const YukinaConfig: Configuration = {
       nameKey: I18nKeys.nav_bar_home,
       href: "/",
     },
-    // NOTE: Archive don't seem to relevant.
-    // {
-    //   nameKey: I18nKeys.nav_bar_archive,
-    //   href: "/archive",
-    // },
     {
       nameKey: I18nKeys.nav_bar_publications,
       href: "/publications",
@@ -51,22 +46,12 @@ const YukinaConfig: Configuration = {
       link: "https://www.youtube.com/@marcmonfort",
     },
   ],
-  maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
-  maxSidebarTagChip: 12,
-  maxFooterCategoryChip: 6,
-  maxFooterTagChip: 24,
-
   banners: [
     "/banners/MareNostrum4.webp",
     "/banners/fpv-drone.webp",
-    // "/banners/jet-fighter.webp",
-    // "/banners/MQ-9_Reaper_UAV.webp",
     "/banners/coding.webp",
-    // "/banners/neurons.webp",
     "/banners/china-wall.webp",
   ],
-
-  slugMode: "RAW", // 'RAW' (readable URLs) | 'HASH'
 
   license: {
     name: "CC BY-NC-SA 4.0",

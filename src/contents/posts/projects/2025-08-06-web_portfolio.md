@@ -5,7 +5,7 @@ description: A step-by-step log of how I designed, built and self-hosted my pers
 published: 2025-08-06
 tags: [Astro, Self-Hosting]
 category: Projects
-cover: /posts/web_portfolio/cover.webp
+cover: /posts/web-portfolio/cover.webp
 coverPosition: top
 draft: false
 ---
@@ -93,9 +93,9 @@ I wanted something simple and recognizable using my initials “MM.” Two pract
 - A transparent version with a subtle white border to hold up on dark backgrounds.
 
 <div style="display: flex; justify-content: center; gap: 10px; padding: 10px; flex-wrap: wrap;">
-  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo on light background" style="width: 100%; max-width: 200px; height: auto;" />
-  <img src="/posts/web_portfolio/MM_logo_circular_crop.png" alt="MM logo preview on dark background" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
-  <img src="/posts/web_portfolio/MM_logo_fit_transparent.png" alt="MM logo with white border on dark" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
+  <img src="/logos/MM_logo_circular_crop.png" alt="MM logo on light background" style="width: 100%; max-width: 200px; height: auto;" />
+  <img src="/logos/MM_logo_circular_crop.png" alt="MM logo preview on dark background" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
+  <img src="/logos/MM_logo_fit_transparent.png" alt="MM logo with white border on dark" style="width: 100%; max-width: 200px; height: auto; background-color: black;" />
 </div>
 
 ---

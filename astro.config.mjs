@@ -10,7 +10,6 @@ import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkMath from "remark-math";
-import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 import YukinaConfig from "./yukina.config";
 import legacyRedirects from "./legacy-redirects.mjs";
@@ -22,10 +21,11 @@ export default defineConfig({
   site: YukinaConfig.site,
   // Keep old links working:
   // - the About page was folded into the home page intro
-  // - all projects now fit on the home page, so page 2 no longer exists
+  // - all projects now fit on the home page, so page 2 and the archive are gone
   redirects: {
     "/about": "/",
     "/2": "/",
+    "/archive": "/",
     // Old hashed post, tag and category URLs -> readable ones
     ...legacyRedirects,
   },
@@ -51,7 +51,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "github-dark-default",
     },
-    remarkPlugins: [remarkReadingTime, remarkMath],
+    remarkPlugins: [remarkMath],
     rehypePlugins: [
       rehypeSlug,
       rehypeKatex,

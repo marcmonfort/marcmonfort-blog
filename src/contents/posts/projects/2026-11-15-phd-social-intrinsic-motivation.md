@@ -6,8 +6,8 @@ published: 2026-11-15
 tags: [Reinforcement Learning, Multi-Agent Systems, Intrinsic Motivation, Social AI]
 category: Research
 author: Marc Monfort
-# TODO: add a cover image (1200×630) at public/posts/2026-11-15-phd-social-intrinsic-motivation/cover.webp
-# cover: /posts/2026-11-15-phd-social-intrinsic-motivation/cover.webp
+# TODO: add a cover image (1200×630) at public/posts/phd-social-intrinsic-motivation/cover.webp
+# cover: /posts/phd-social-intrinsic-motivation/cover.webp
 # DRAFT: only visible with `pnpm dev`. Set to false when the TODO sections are written.
 draft: true
 ---

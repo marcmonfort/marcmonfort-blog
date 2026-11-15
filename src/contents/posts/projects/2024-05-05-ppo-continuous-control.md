@@ -7,7 +7,7 @@ tags: [Reinforcement Learning, PPO, Continuous Control]
 category: Projects
 author: Marc Monfort
 sourceLink: "https://github.com/marcmonfort/ppo-continuous-control"
-cover: "/posts/2024-05-05-ppo-continuous-control/LunarLanderContinuous-v2.gif"
+cover: "/posts/ppo-continuous-control/LunarLanderContinuous-v2.gif"
 coverPosition: center
 draft: false
 ---
@@ -46,10 +46,10 @@ Balance a pendulum upright by applying torque.
 Goal: minimize swing and keep the pendulum near vertical.
 
 **Training Curve**
-![Pendulum-v1 Training Graph](/posts/2024-05-05-ppo-continuous-control/Pendulum-v1.png)
+![Pendulum-v1 Training Graph](/posts/ppo-continuous-control/Pendulum-v1.png)
 
 **Learned Behavior**
-![Pendulum-v1](/posts/2024-05-05-ppo-continuous-control/Pendulum-v1.gif)
+![Pendulum-v1](/posts/ppo-continuous-control/Pendulum-v1.gif)
 
 ---
 
@@ -58,10 +58,10 @@ Control a bipedal robot to walk across rough terrain.
 Goal: maximize forward progress, avoid falling, and minimize energy use.
 
 **Training Curve**
-![BipedalWalker-v3 Training Graph](/posts/2024-05-05-ppo-continuous-control/BipedalWalker-v3.png)
+![BipedalWalker-v3 Training Graph](/posts/ppo-continuous-control/BipedalWalker-v3.png)
 
 **Learned Behavior**
-<video src="/posts/2024-05-05-ppo-continuous-control/BipedalWalker-v3.mp4" autoplay loop muted playsinline aria-label="BipedalWalker-v3" style="max-width:100%;height:auto;"></video>
+<video src="/posts/ppo-continuous-control/BipedalWalker-v3.mp4" autoplay loop muted playsinline aria-label="BipedalWalker-v3" style="max-width:100%;height:auto;"></video>
 
 ---
 
@@ -70,10 +70,10 @@ Land a lunar module on a target pad with continuous thrust control.
 Goal: achieve a smooth landing with minimum fuel and without crashing.
 
 **Training Curve**
-![LunarLanderContinuous-v2 Training Graph](/posts/2024-05-05-ppo-continuous-control/LunarLanderContinuous-v2.png)
+![LunarLanderContinuous-v2 Training Graph](/posts/ppo-continuous-control/LunarLanderContinuous-v2.png)
 
 **Learned Behavior**
-![LunarLanderContinuous-v2 Episode 0](/posts/2024-05-05-ppo-continuous-control/LunarLanderContinuous-v2.gif)
+![LunarLanderContinuous-v2 Episode 0](/posts/ppo-continuous-control/LunarLanderContinuous-v2.gif)
 
 ---
 

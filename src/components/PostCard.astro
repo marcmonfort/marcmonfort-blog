@@ -1,10 +1,7 @@
 ---
-import { IdToSlug, PostIdToSlug } from "../utils/hash";
+import { Slugify, PostIdToSlug } from "../utils/slug";
 import { Icon } from "astro-icon/components";
-import PostCardInfoIcon from "./widgets/PostCardInfoIcon.astro";
 import { GetCoverURLForUnspecifiedEntry } from "../utils/cover";
-import { i18n } from "../locales/translation";
-import I18nKeys from "../locales/keys";
 import YukinaConfig from "../../yukina.config";
 import { formatDate } from "../utils/date";
 
@@ -17,13 +14,11 @@ export interface Props {
   description?: string;
   image?: string;
   coverPosition?: "top" | "center" | "bottom";
-  readingMetadata: { time: number; wordCount: number };
 }
 
 const props = Astro.props;
 const entryID = PostIdToSlug(props.id);
 const contentUrl = `/posts/${entryID}`;
-const { time, wordCount } = props.readingMetadata;
 ---
 
 <div
@@ -84,61 +79,13 @@ const { time, wordCount } = props.readingMetadata;
           />
         </a>
       </div>
-      <!-- NOTE: I think this occupies too much space and becomes a bit too cumbersome -->
-      <!-- <div class="ml-2 hidden lg:block">
-        <ul class="flex flex-row space-x-4">
-          <li class="data space-x-2">
-            <PostCardInfoIcon name="cuida:calendar-outline" />
-            <span class="select-none">
-              {formatDate(props.published, YukinaConfig.locale)}
-            </span>
-          </li>
-          {
-            props.category && (
-              <li class="data space-x-1.5">
-                <PostCardInfoIcon name="dashicons:category" />
-                <a
-                  class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
-                  href={`/categories/${IdToSlug(props.category)}`}
-                >
-                  {props.category}
-                </a>
-              </li>
-            )
-          }
-          <li
-            class="hidden items-center overflow-clip md:block lg:hidden xl:block"
-          >
-            {
-              props.tags && (
-                <div class="data space-x-2">
-                  <PostCardInfoIcon name="mdi:tag-outline" />
-                  <ul class="flex flex-row items-center space-x-1">
-                    {props.tags.slice(0, 3).map((tag, index) => (
-                      <li class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
-                        {index > 0 && <span class="pr-1">/</span>}
-                        <a
-                          class="rounded-md px-1.5 py-0.5 transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
-                          href={`/tags/${IdToSlug(tag)}`}
-                        >
-                          {tag}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            }
-          </li>
-        </ul>
-      </div> -->
       <div class="my-3 lg:ml-2">
         <p class="desc">{props.description}</p>
       </div>
       <div>
         <div class="select-none lg:ml-2">
           <div
-            class="reading-time flex flex-row flex-wrap items-center gap-y-1"
+            class="post-meta flex flex-row flex-wrap items-center gap-y-1"
           >
             <div class="mr-2 hidden lg:inline">
               <span class="select-none whitespace-nowrap">
@@ -151,7 +98,7 @@ const { time, wordCount } = props.readingMetadata;
                 <span class="data space-x-1.5">
                   <a
                     class="select-none rounded-md px-1.5 py-0.5 text-[var(--text-color-lighten)] transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
-                    href={`/categories/${IdToSlug(props.category)}`}
+                    href={`/categories/${Slugify(props.category)}`}
                   >
                     {props.category}
                   </a>
@@ -163,11 +110,11 @@ const { time, wordCount } = props.readingMetadata;
                 <>
                   <span class="mx-2">|</span>
                   <div class="inline-flex flex-row flex-wrap items-center space-x-1">
-                    {props.tags.slice(0, 3).map((tag, index) => (
+                    {props.tags.slice(0, 3).map((tag) => (
                       <span class="flex select-none flex-row items-center text-[var(--text-color-lighten)]">
                         <a
                           class="rounded-md px-1.5 py-0.5 transition-all hover:bg-[var(--primary-color-lighten)] hover:text-[var(--primary-color)]"
-                          href={`/tags/${IdToSlug(tag)}`}
+                          href={`/tags/${Slugify(tag)}`}
                         >
                           {tag}
                         </a>
@@ -221,7 +168,7 @@ const { time, wordCount } = props.readingMetadata;
     font-family: var(--primary-font);
   }
 
-  .reading-time {
+  .post-meta {
     @apply align-middle text-sm text-[var(--text-color-lighten)];
     font-family: var(--primary-font);
   }
